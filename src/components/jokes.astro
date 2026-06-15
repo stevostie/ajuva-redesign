@@ -2,11 +2,11 @@
 import { jokes } from '../data/content';
 ---
 
-<div class="space-y-0">
+<div class="space-y-0 text-sm text-ink leading-relaxed">
   {jokes.map((joke, i) => (
     <>
-      {i > 0 && <hr class="divider" />}
-      <p class="text-sm text-gray-700 leading-relaxed italic">{joke}</p>
+      {i > 0 && <hr class="hairline my-3" />}
+      <p class="italic">{joke}</p>
     </>
   ))}
 </div>
