@@ -1,0 +1,20 @@
+---
+import { jokes } from '../data/content';
+---
+
+<div class="card-retro p-5 bg-white">
+  <h3 class="text-lg font-bold text-navy mb-3" style="font-family: Georgia, 'Times New Roman', serif;">
+    <a href="/zabava/vtipy" class="hover:text-navy-light transition-colors">Vtipy na tento týždeň</a>:
+  </h3>
+
+  <div class="space-y-0">
+    {jokes.map((joke, i) => (
+      <>
+        {i > 0 && (
+          <hr class="divider-dots my-3" />
+        )}
+        <p class="text-sm text-gray-700 leading-relaxed italic">{joke}</p>
+      </>
+    ))}
+  </div>
+</div>

@@ -1,0 +1,73 @@
+---
+import { galleryImages } from '../data/content';
+---
+
+<div class="card-retro overflow-hidden relative" style="width: 100%; max-width: 358px; height: 268px;">
+  <div class="relative w-full h-full" id="gallery-container">
+    {galleryImages.map((img, i) => (
+      <img
+        src={`/${img}`}
+        alt={`Galéria ${i + 1}`}
+        class={`gallery-slide object-contain w-full h-full p-1 ${i === 0 ? 'active' : ''}`}
+        loading={i < 3 ? 'eager' : 'lazy'}
+      />
+    ))}
+  </div>
+
+  <!-- Dots navigation -->
+  <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+    {galleryImages.map((_, i) => (
+      <button
+        class="w-2.5 h-2.5 rounded-full border border-navy transition-colors"
+        data-index={i}
+        style={`background: ${i === 0 ? '#000066' : 'white'}`}
+        aria-label={`Obrázok ${i + 1}`}
+      ></button>
+    ))}
+  </div>
+
+  <!-- Prev/Next buttons -->
+  <button
+    id="gallery-prev"
+    class="absolute left-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-navy text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
+    aria-label="Predošlý"
+  >◀</button>
+  <button
+    id="gallery-next"
+    class="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-navy text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
+    aria-label="Ďalší"
+  >▶</button>
+</div>
+
+<script>
+  (function() {
+    const container = document.getElementById('gallery-container');
+    if (!container) return;
+    const slides = container.querySelectorAll('.gallery-slide');
+    const dots = container.parentElement?.querySelectorAll('button[data-index]');
+    const prev = document.getElementById('gallery-prev');
+    const next = document.getElementById('gallery-next');
+    let current = 0;
+    const total = slides.length;
+
+    function goTo(index: number) {
+      slides[current].classList.remove('active');
+      if (dots) dots[current].style.background = 'white';
+      current = ((index % total) + total) % total;
+      slides[current].classList.add('active');
+      if (dots) dots[current].style.background = '#000066';
+    }
+
+    function nextSlide() { goTo(current + 1); }
+    function prevSlide() { goTo(current - 1); }
+
+    next?.addEventListener('click', nextSlide);
+    prev?.addEventListener('click', prevSlide);
+    dots?.forEach((dot) => {
+      dot.addEventListener('click', () => goTo(parseInt(dot.getAttribute('data-index') || '0')));
+    });
+
+    // Autoplay
+    setInterval(nextSlide, 5000);
+  })();
+</script>

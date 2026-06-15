@@ -1,0 +1,54 @@
+---
+---
+
+<div class="header-gradient text-white relative overflow-hidden">
+  <!-- Decorative top bar -->
+  <div class="bg-[#000044] h-1 w-full"></div>
+
+  <div class="max-w-5xl mx-auto px-4 py-3">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <!-- Left: Banner image -->
+      <div class="flex-shrink-0">
+        <a href="/" title="AJUVA Š+S s.r.o. - Domov">
+          <img
+            src="/images/Nadpis2.jpg"
+            alt="AJUVA Š+S s.r.o."
+            class="h-24 md:h-28 w-auto rounded shadow-lg hover:shadow-xl transition-shadow"
+            style="box-shadow: 0 0 12px rgba(128,255,255,0.4);"
+          />
+        </a>
+      </div>
+
+      <!-- Center: Company title & date -->
+      <div class="text-center flex-1">
+        <div class="text-2xl md:text-3xl font-bold tracking-wide" style="font-family: Georgia, 'Times New Roman', serif;">
+          AJUVA Š+S s.r.o.
+        </div>
+        <div class="text-sm md:text-base text-cyan-200 mt-1">
+          Školenia • Prehliadky • BOZP • PO
+        </div>
+        <div class="mt-2 text-cyan-200 text-sm" id="current-date">
+          <script>
+            const now = new Date();
+            const days = ['Nedeľa','Pondelok','Utorok','Streda','Štvrtok','Piatok','Sobota'];
+            const months = ['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'];
+            document.getElementById('current-date')!.textContent =
+              `${days[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
+          </script>
+        </div>
+      </div>
+
+      <!-- Right: Contact quick info -->
+      <div class="text-right text-sm flex-shrink-0">
+        <div class="text-cyan-200 leading-relaxed">
+          <div>📞 048/416 27 75</div>
+          <div>✉️ ajuva@ajuva.sk</div>
+          <div class="text-xs mt-1 opacity-75">Zvolenská cesta 20, Banská Bystrica</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom accent line -->
+  <div class="bg-accent h-0.5 w-full opacity-60"></div>
+</div>

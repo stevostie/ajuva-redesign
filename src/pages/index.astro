@@ -1,0 +1,131 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Gallery from '../components/Gallery.astro';
+import ServiceList from '../components/ServiceList.astro';
+import ContactCard from '../components/ContactCard.astro';
+import Jokes from '../components/Jokes.astro';
+---
+
+<MainLayout>
+  <!-- Row 1: Banner + Title + Info icon -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+    <!-- Info icon -->
+    <div class="flex-shrink-0">
+      <img src="/images/info.png" alt="Info" class="w-20 h-20" loading="eager" />
+    </div>
+    <!-- Title -->
+    <div class="flex-1 text-center">
+      <h1 class="text-2xl md:text-3xl font-bold text-navy leading-snug" style="font-family: Georgia, 'Times New Roman', serif;">
+        AKTUÁLNE TERMÍNY ŠKOLENÍ A ODBORNEJ PRÍPRAVY.
+      </h1>
+      <p class="text-red-600 font-bold text-sm md:text-base mt-1">
+        Pozor — zmena zákona č.124,125/2006 a 314/2012
+      </p>
+    </div>
+  </div>
+
+  <!-- Row 2: Gallery + Aktuálne informácie -->
+  <div class="flex flex-col md:flex-row gap-6 mb-6">
+    <!-- Gallery -->
+    <div class="flex-shrink-0">
+      <Gallery />
+    </div>
+
+    <!-- Aktuálne informácie box -->
+    <div class="flex-1 card-retro overflow-hidden">
+      <div class="tab-retro text-center text-sm py-1">
+        AKTUÁLNE INFORMÁCIE
+      </div>
+      <div class="scroll-box bg-info-retro" style="height: 235px;">
+        <div class="scroll-box-inner p-4 text-sm text-gray-800 space-y-4">
+          <div class="bg-white/60 rounded p-3 border border-navy/10">
+            <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-bold text-navy hover:underline">ŠKOLENIA</a> nájdete ďalšie aktuálne termíny pre odbornú a aktualizačnú odbornú prípravu obslúh vyhradených technických zariadení tlakových a plynových.</p>
+            <p class="mt-1">Aktuálny termín: <a href="/skolenia/kuric-1-5-triedy" class="font-bold text-red-600 hover:underline">21.01 a 22.01.2026</a></p>
+          </div>
+
+          <div class="bg-white/60 rounded p-3 border border-navy/10">
+            <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-bold text-navy hover:underline">ŠKOLENIA</a> nájdete termíny pre aktualizačnú odbornú prípravu revíznych technikov a osoby na opravy VTZ tlakové a plynové.</p>
+          </div>
+
+          <div class="bg-red-50 rounded p-3 border border-red-200">
+            <p class="font-bold text-red-700">Pozor!</p>
+            <p>Od 01.01.2023 sú platné nové ustanovenia zákona č.124/2006 Z.z. Zmeny sú aj v §16.</p>
+            <p class="mt-1">Je novelizovaná vyhláška č.356/2007 Z.z. o obsahu a rozsahu vzdelávania vyhl. č.66/2023.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3: Service List + Contact Card -->
+  <div class="flex flex-col md:flex-row gap-6 mb-6">
+    <div class="flex-1">
+      <ServiceList />
+    </div>
+    <div class="w-full md:w-80 flex-shrink-0">
+      <ContactCard />
+    </div>
+  </div>
+
+  <!-- Row 4: Exchange rates + Thanks box + Extra column -->
+  <div class="flex flex-col md:flex-row gap-6 mb-6">
+    <!-- Currency widget placeholder (original used external widgets) -->
+    <div class="card-retro p-4 flex-1 flex items-center justify-center min-h-[350px]">
+      <div class="text-center text-gray-500">
+        <p class="font-bold text-navy mb-2">KURZOVÉ LÍSTKY A HOROSKOP</p>
+        <p class="text-xs">Externé widgety — zobrazenie vyžaduje JavaScript</p>
+        <div class="mt-3 p-3 bg-cream rounded text-xs text-navy italic">
+          Kurzové lístky a horoskop boli na pôvodnej stránke vložené cez externé služby
+          (openiazoch.sk, moneo.sk). Pre plnú funkčnosť kontaktujte správcu.
+        </div>
+      </div>
+    </div>
+
+    <!-- Thanks for visiting -->
+    <div class="card-retro thanks-box p-4 flex-1 text-center flex flex-col items-center justify-center">
+      <h3 class="text-lg font-bold text-navy mb-3" style="font-family: Georgia, 'Times New Roman', serif;">
+        Ďakujeme za návštevu našej stránky.
+      </h3>
+      <p class="text-sm text-gray-700 mb-3">Každý návrh na zlepšenie nás poteší.</p>
+      <img
+        src="/images/035.gif"
+        alt="Ďakujeme"
+        class="w-28 h-auto mb-3"
+        loading="lazy"
+      />
+      <p class="font-bold text-navy">ajuva@ajuva.sk</p>
+    </div>
+
+    <!-- Extra space placeholder -->
+    <div class="card-retro p-3 flex-1 flex items-center justify-center min-h-[350px]">
+      <div class="text-center text-gray-500">
+        <p class="text-xs text-navy font-bold">AJUVA Š+S s.r.o.</p>
+        <p class="text-xs mt-2">Školenia, prehliadky, BOZP, PO</p>
+        <p class="text-xs mt-2">Zvolenská cesta 20</p>
+        <p class="text-xs">974 01 Banská Bystrica</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 5: Jokes + Map -->
+  <div class="flex flex-col md:flex-row gap-6 mb-6">
+    <div class="flex-1">
+      <Jokes />
+    </div>
+    <div class="w-full md:w-80 flex-shrink-0">
+      <div class="card-retro overflow-hidden">
+        <img
+          src="/images/Mapa_ajuva.png"
+          alt="Mapa — AJUVA Banská Bystrica"
+          class="w-full h-auto"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 6: Last updated date -->
+  <div class="text-center text-sm text-gray-600 mb-4">
+    <p class="font-bold">Aktualizované dňa: 29.12.2025</p>
+  </div>
+</MainLayout>

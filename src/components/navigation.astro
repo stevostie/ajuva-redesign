@@ -1,0 +1,104 @@
+---
+import { mainMenu } from '../data/menu';
+
+const currentPath = Astro.url?.pathname || '/';
+---
+
+<!-- Mobile toggle button -->
+<button
+  id="mobile-menu-toggle"
+  class="nav-mobile-toggle w-full bg-navy text-white px-4 py-3 text-left font-bold flex items-center justify-between md:hidden"
+  aria-label="Menu"
+>
+  <span>☰ MENU</span>
+  <span id="mobile-arrow" class="transition-transform">▼</span>
+</button>
+
+<!-- Desktop Navigation -->
+<nav class="nav-desktop bg-navy text-white">
+  <div class="max-w-5xl mx-auto">
+    <ul class="flex flex-wrap justify-center">
+      {mainMenu.map((item) => (
+        <li class="relative group">
+          {item.href ? (
+            <a
+              href={item.href}
+              class={`block px-3 py-2.5 text-sm font-bold whitespace-nowrap transition-colors hover:bg-accent hover:text-navy ${
+                currentPath === item.href ? 'bg-accent text-navy' : ''
+              }`}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <span
+              class={`block px-3 py-2.5 text-sm font-bold whitespace-nowrap cursor-default transition-colors group-hover:bg-accent group-hover:text-navy ${
+                item.children?.some(c => currentPath === c.href) ? 'bg-accent text-navy' : ''
+              }`}
+            >
+              {item.label}
+            </span>
+          )}
+          {item.children && item.children.length > 0 && (
+            <ul class="nav-dropdown absolute left-0 top-full min-w-[220px] hidden group-hover:block z-50">
+              {item.children.map((child) => (
+                <li>
+                  <a
+                    href={child.href}
+                    class={`block px-4 py-2 text-sm whitespace-nowrap border-b border-[#000088] last:border-b-0 ${
+                      currentPath === child.href ? 'bg-accent text-navy' : ''
+                    }`}
+                  >
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<!-- Mobile menu (hidden by default) -->
+<div id="mobile-menu" class="nav-mobile-menu bg-navy text-white hidden md:hidden">
+  <ul class="divide-y divide-[#000088]">
+    {mainMenu.map((item) => (
+      <li>
+        {item.href ? (
+          <a href={item.href} class="block px-4 py-2.5 text-sm font-bold hover:bg-accent hover:text-navy">
+            {item.label}
+          </a>
+        ) : (
+          <details class="group/mob">
+            <summary class="block px-4 py-2.5 text-sm font-bold cursor-pointer hover:bg-accent hover:text-navy list-none">
+              {item.label} <span class="float-right">▼</span>
+            </summary>
+            <ul class="bg-[#000044]">
+              {item.children?.map((child) => (
+                <li>
+                  <a href={child.href} class="block px-8 py-2 text-sm hover:bg-accent hover:text-navy">
+                    {child.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )}
+      </li>
+    ))}
+  </ul>
+</div>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const arrow = document.getElementById('mobile-arrow');
+  if (toggle && menu && arrow) {
+    toggle.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      menu.classList.toggle('hidden', !isHidden);
+      arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+    });
+  }
+</script>
