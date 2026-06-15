@@ -5,17 +5,17 @@
   <div class="bg-[#000033] h-1.5 w-full"></div>
 
   <div class="header-gradient relative">
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px);"></div>
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px);"></div>
 
     <div class="max-w-5xl mx-auto px-4 py-3">
-      <div class="flex items-center gap-4">
-        <!-- Logo badge from original site -->
+      <div class="flex items-center gap-5">
+        <!-- Circular badge logo (replica of original site's header badge) -->
         <a href="/" title="AJUVA Š+S s.r.o." class="flex-shrink-0 group">
           <img
-            src="/images/logo.png"
+            src="/images/ajuva.png"
             alt="AJUVA Š+S s.r.o."
-            class="h-20 w-auto transition-all duration-300 rounded-full group-hover:scale-110 group-hover:brightness-110"
-            style="filter: drop-shadow(0 0 10px rgba(128,255,255,0.35));"
+            class="h-24 w-auto transition-all duration-300 group-hover:scale-110"
+            style="filter: drop-shadow(0 0 10px rgba(128,255,255,0.3));"
           />
         </a>
 
@@ -32,14 +32,17 @@
             <span class="text-cyan-400/40">·</span>
             <span class="text-cyan-300 text-xs md:text-sm">PO</span>
           </div>
-          <div class="mt-1.5 text-cyan-200/60 text-xs" id="current-date"></div>
+          <div class="mt-2 flex items-center justify-center gap-2 text-xs text-cyan-200/70">
+            <span>📍 Zvolenská cesta 20, B.Bystrica</span>
+            <span class="opacity-40">|</span>
+            <span id="current-date"></span>
+          </div>
         </div>
 
         <div class="flex-shrink-0 text-right">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-cyan-400/20">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2.5 border border-cyan-400/20">
             <div class="text-white font-bold text-sm">📞 048/416 27 75</div>
             <div class="text-cyan-200 text-xs mt-0.5">✉️ ajuva@ajuva.sk</div>
-            <div class="text-cyan-300/60 text-[10px] mt-1">Zvolenská cesta 20, B.Bystrica</div>
           </div>
         </div>
       </div>

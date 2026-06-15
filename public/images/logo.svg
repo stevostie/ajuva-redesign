@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
   <defs>
-    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#000099"/>
-      <stop offset="100%" style="stop-color:#000066"/>
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#80FFFF;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#80FFFF;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#80FFFF;stop-opacity:0"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <radialGradient id="badgeGrad" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#0044cc"/>
+      <stop offset="100%" stop-color="#000066"/>
+    </radialGradient>
+    <filter id="badgeShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
     </filter>
   </defs>
-  
-  <!-- Background shield shape -->
-  <rect x="2" y="2" width="196" height="76" rx="8" ry="8" fill="url(#navyGrad)" stroke="#80FFFF" stroke-width="1.5" opacity="0.95"/>
-  
-  <!-- Company name -->
-  <text x="100" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle" filter="url(#glow)">AJUVA</text>
-  
-  <!-- Tagline -->
-  <text x="100" y="56" font-family="Tahoma, Arial, sans-serif" font-size="9" fill="#80FFFF" text-anchor="middle" letter-spacing="3">Š + S  s.r.o.</text>
-  
-  <!-- Bottom accent line -->
-  <line x1="30" y1="65" x2="170" y2="65" stroke="url(#accentGrad)" stroke-width="1" opacity="0.6"/>
+
+  <!-- Outer ring -->
+  <circle cx="90" cy="90" r="85" fill="url(#badgeGrad)" stroke="#80FFFF" stroke-width="2" filter="url(#badgeShadow)"/>
+
+  <!-- Inner decorative ring -->
+  <circle cx="90" cy="90" r="75" fill="none" stroke="#80FFFF" stroke-width="1" opacity="0.4"/>
+
+  <!-- Curved text: "ŠKOLENIE * SERVIS * AJUVA" around top arc -->
+  <defs>
+    <path id="topArc" d="M 30,90 A 60,60 0 0,1 150,90"/>
+    <path id="botArc" d="M 35,95 A 60,60 0 0,0 145,95"/>
+  </defs>
+  <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#80FFFF" letter-spacing="2">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">ŠKOLENIE ★ SERVIS ★ AJUVA</textPath>
+  </text>
+
+  <!-- Center text: "AJUVA" -->
+  <text x="90" y="92" font-family="Georgia, 'Times New Roman', serif" font-size="36" font-weight="bold" fill="#FF3333" text-anchor="middle" dominant-baseline="central" filter="url(#badgeShadow)">AJUVA</text>
+
+  <!-- Bottom text -->
+  <text x="90" y="118" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#80FFFF" text-anchor="middle" letter-spacing="1">Š+S s.r.o.</text>
 </svg>
