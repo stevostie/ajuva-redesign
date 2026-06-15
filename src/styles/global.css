@@ -1,19 +1,18 @@
 @import "tailwindcss";
 
-/* Retro AJUVA Design Tokens */
+/* ============================================
+   AJUVA 2026 — Retro-Modern Fusion Design
+   ============================================ */
+
 :root {
+  --navy-deep: #000033;
   --navy: #000066;
-  --navy-light: #000099;
+  --navy-glow: #000099;
   --accent: #80FFFF;
-  --accent-light: #b3ffff;
+  --accent-soft: #b3ffff;
   --cream: #E3E3F4;
-  --bg-light: #f0f4ff;
-  --text-navy: #000066;
-  --text-dark: #1a1a2e;
-  --text-gray: #333333;
-  --border-navy: #000066;
-  --card-shadow: 0 0 8px rgba(0, 0, 102, 0.3);
-  --card-inner-shadow: inset 0 0 6px rgba(0, 0, 102, 0.15);
+  --warm-bg: #f8f6f0;
+  --card-border: #000088;
 }
 
 @theme {
@@ -26,80 +25,90 @@
   --font-body: Tahoma, Arial, sans-serif;
 }
 
-/* Background pattern - subtle grid overlay */
+/* ── Base ── */
 body {
   font-family: Tahoma, Arial, sans-serif;
-  background-color: #f8f8ff;
-  background-image:
-    url('/images/bg.jpg');
+  background-color: #e8ecf2;
+  background-image: url('/images/bg.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  background-blend-mode: soft-light;
 }
 
-/* Overlay to make background subtle */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 102, 0.12) 0%, rgba(128, 255, 255, 0.08) 100%);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(0, 0, 102, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(128, 255, 255, 0.06) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Content above overlay */
 #app-content {
   position: relative;
   z-index: 1;
 }
 
-/* Retro dotted divider */
+/* ── Header ── */
+.header-gradient {
+  background: linear-gradient(
+    175deg,
+    #000022 0%,
+    #000044 20%,
+    #000066 45%,
+    #000088 70%,
+    #0000aa 100%
+  );
+}
+
+/* ── Divider ── */
 .divider-dots {
   border: none;
   border-top: 2px dotted var(--navy);
-  opacity: 0.4;
-  margin: 1.5rem 0;
+  opacity: 0.3;
+  margin: 1.25rem 0;
 }
 
-/* Retro card box shadow effect */
+/* ── Retro Card — Main Content Card ── */
 .card-retro {
-  background: white;
-  border: 2px solid var(--navy);
-  border-radius: 8px;
+  background: linear-gradient(175deg, #ffffff 0%, #fafbff 100%);
+  border: 1.5px solid var(--navy-light);
+  border-radius: 10px;
   box-shadow:
     0 0 0 2px white,
-    0 0 0 5px var(--navy),
-    4px 4px 8px rgba(0, 0, 0, 0.3);
-  position: relative;
+    0 0 0 4px rgba(0, 0, 102, 0.25),
+    0 4px 16px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: box-shadow 0.3s ease;
 }
 
-/* Inner card with lighter border */
-.card-retro-inner {
-  background: white;
-  border: 1px solid var(--navy);
-  border-radius: 6px;
-  box-shadow: var(--card-inner-shadow);
+.card-retro:hover {
+  box-shadow:
+    0 0 0 2px white,
+    0 0 0 4px rgba(0, 0, 102, 0.35),
+    0 6px 24px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
-/* Navigation dropdown styling */
-.nav-dropdown {
-  background: var(--navy);
-  border: 1px solid var(--accent);
-  border-radius: 0 0 6px 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-}
-
-.nav-dropdown a {
+/* ── Card Tab Header ── */
+.tab-retro {
+  background: linear-gradient(180deg, #000088 0%, #000066 100%);
   color: white;
-  transition: background-color 0.2s;
+  border-radius: 8px 8px 0 0;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 6px 20px;
+  letter-spacing: 0.03em;
 }
 
-.nav-dropdown a:hover {
-  background-color: var(--accent);
-  color: var(--navy);
+/* ── Info Box (scrolling) ── */
+.bg-info-retro {
+  background: linear-gradient(180deg, #edf4ff 0%, #d8eaff 100%);
 }
 
-/* Info box with scroll animation */
 @keyframes scroll-up {
   0% { transform: translateY(0); }
   100% { transform: translateY(-50%); }
@@ -118,116 +127,77 @@ body::before {
   animation-play-state: paused;
 }
 
-/* Gallery fade animation */
+/* ── Thanks Box ── */
+.thanks-box {
+  background: linear-gradient(175deg, #fff8e8 0%, #ffe4c4 100%);
+  border: 1.5px solid var(--navy-light);
+  border-radius: 10px;
+}
+
+/* ── Contact Card ── */
+.contact-card {
+  background: linear-gradient(175deg, #ffffff 0%, #f2f4ff 100%);
+}
+
+/* ── Gallery ── */
 @keyframes galleryFade {
-  0%, 100% { opacity: 0; }
-  5%, 30% { opacity: 1; }
-  35% { opacity: 0; }
+  0%, 100% { opacity: 0; transform: scale(1.02); }
+  3%, 28% { opacity: 1; transform: scale(1); }
+  33% { opacity: 0; transform: scale(0.98); }
 }
 
 .gallery-slide {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .gallery-slide.active {
   opacity: 1;
 }
 
-/* Header gradient */
-.header-gradient {
-  background: linear-gradient(180deg,
-    #000033 0%,
-    #000066 25%,
-    #000099 50%,
-    #0000cc 75%,
-    #0000ff 100%
-  );
-}
-
-/* Retro info box background */
-.bg-info-retro {
-  background: linear-gradient(180deg, #e8f4ff 0%, #d0ecff 100%);
-}
-
-/* Thanks box styling */
-.thanks-box {
-  background: linear-gradient(180deg, #fff8e1 0%, #ffe0b2 100%);
-  border: 2px solid var(--navy);
-  border-radius: 10px;
-}
-
-/* Contact card styling */
-.contact-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%);
-}
-
-/* Footer link bar */
+/* ── Footer ── */
 .footer-links a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: all 0.2s;
 }
 
 .footer-links a:hover {
   color: white;
   text-decoration: underline;
+  text-shadow: 0 0 8px rgba(128, 255, 255, 0.4);
 }
 
-/* Mobile hamburger menu */
-@media (max-width: 768px) {
-  .nav-desktop { display: none; }
-  .nav-mobile-toggle { display: block; }
-}
+/* ═══════════════════════════════════════
+   2026 3D NAVIGATION
+   ═══════════════════════════════════════ */
 
-@media (min-width: 769px) {
-  .nav-desktop { display: flex; }
-  .nav-mobile-toggle { display: none; }
-  .nav-mobile-menu { display: none; }
-}
-
-/* Smooth scrolling for info box */
-.smooth-scroll {
-  scroll-behavior: smooth;
-}
-
-/* Retro rounded tabs */
-.tab-retro {
-  background: var(--navy);
-  color: white;
-  border-radius: 8px 8px 0 0;
-  font-weight: bold;
-  padding: 4px 16px;
-}
-
-/* === 2026 3D Navigation Effects === */
-
-/* Perspective wrapper for 3D transforms */
 .perspective-\[800px\] {
   perspective: 800px;
 }
 
-/* 3D nav item */
+/* Nav item base */
 .nav-item {
   transform-style: preserve-3d;
   backface-visibility: hidden;
   position: relative;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Glow line underneath active/hovered nav items */
+/* Glow underline */
 .nav-item::after {
   content: '';
   position: absolute;
-  bottom: 2px;
+  bottom: 3px;
   left: 50%;
   transform: translateX(-50%) scaleX(0);
-  width: 60%;
+  width: 55%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #80FFFF, transparent);
-  transition: transform 0.3s ease;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
   border-radius: 1px;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .nav-item:hover::after,
@@ -235,10 +205,28 @@ body::before {
   transform: translateX(-50%) scaleX(1);
 }
 
-/* 3D dropdown */
+/* Active state glow pulse */
+@keyframes nav-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(128, 255, 255, 0.15);
+    text-shadow: 0 0 8px rgba(128, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(128, 255, 255, 0.3);
+    text-shadow: 0 0 14px rgba(128, 255, 255, 0.5);
+  }
+}
+
+.nav-active {
+  animation: nav-glow 3.5s ease-in-out infinite;
+}
+
+/* Dropdown — 3D glass effect */
 .nav-dropdown-3d {
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .nav-dropdown-3d::before {
@@ -251,15 +239,14 @@ body::before {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid rgba(0, 0, 0, 0.3);
-  z-index: -1;
+  border-bottom: 8px solid rgba(0, 0, 68, 0.95);
 }
 
-/* Dropdown item slide-in animation */
+/* Dropdown item animation */
 @keyframes dropdown-in {
   from {
     opacity: 0;
-    transform: translateY(-8px) rotateX(-10deg);
+    transform: translateY(-10px) rotateX(-12deg);
   }
   to {
     opacity: 1;
@@ -267,17 +254,14 @@ body::before {
   }
 }
 
-/* Nav hover glow pulse */
-@keyframes nav-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(128, 255, 255, 0.1); }
-  50% { box-shadow: 0 0 25px rgba(128, 255, 255, 0.25); }
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .nav-desktop { display: none; }
+  .nav-mobile-toggle { display: block; }
 }
 
-.nav-active {
-  animation: nav-glow 3s ease-in-out infinite;
-}
-
-/* Smooth dropdown visibility */
-.group:hover .group-hover\:opacity-100 {
-  transition-delay: 0.05s;
+@media (min-width: 769px) {
+  .nav-desktop { display: flex; }
+  .nav-mobile-toggle { display: none; }
+  .nav-mobile-menu { display: none; }
 }

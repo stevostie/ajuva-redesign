@@ -1,54 +1,69 @@
 ---
 ---
 
-<div class="header-gradient text-white relative overflow-hidden">
-  <!-- Decorative top bar -->
-  <div class="bg-[#000044] h-1 w-full"></div>
+<div class="header-full relative overflow-hidden">
+  <!-- Top dark bar -->
+  <div class="bg-[#000033] h-1.5 w-full"></div>
 
-  <div class="max-w-5xl mx-auto px-4 py-3">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-      <!-- Left: Banner image -->
-      <div class="flex-shrink-0">
-        <a href="/" title="AJUVA Š+S s.r.o. - Domov">
+  <!-- Main header area -->
+  <div class="header-gradient relative">
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px);"></div>
+
+    <div class="max-w-5xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <!-- LOGO - centerpiece -->
+        <a href="/" title="AJUVA Š+S s.r.o. — Domov" class="flex-shrink-0 group">
           <img
             src="/images/Nadpis2.jpg"
             alt="AJUVA Š+S s.r.o."
-            class="h-24 md:h-28 w-auto rounded shadow-lg hover:shadow-xl transition-shadow"
-            style="box-shadow: 0 0 12px rgba(128,255,255,0.4);"
+            class="h-28 md:h-32 w-auto rounded-md transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+            style="box-shadow: 0 0 20px rgba(128,255,255,0.35), 0 4px 12px rgba(0,0,0,0.3);"
           />
         </a>
-      </div>
 
-      <!-- Center: Company title & date -->
-      <div class="text-center flex-1">
-        <div class="text-2xl md:text-3xl font-bold tracking-wide" style="font-family: Georgia, 'Times New Roman', serif;">
-          AJUVA Š+S s.r.o.
+        <!-- Company name + tagline -->
+        <div class="flex-1 text-center md:text-left">
+          <div class="text-2xl md:text-4xl font-bold tracking-wider text-white" style="font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 30px rgba(128,255,255,0.2);">
+            AJUVA Š+S s.r.o.
+          </div>
+          <div class="flex flex-wrap items-center gap-3 mt-2 justify-center md:justify-start">
+            <span class="text-cyan-300 text-sm md:text-base tracking-wide font-semibold">Školenia</span>
+            <span class="text-cyan-400/40">•</span>
+            <span class="text-cyan-300 text-sm md:text-base tracking-wide font-semibold">Prehliadky</span>
+            <span class="text-cyan-400/40">•</span>
+            <span class="text-cyan-300 text-sm md:text-base tracking-wide font-semibold">BOZP</span>
+            <span class="text-cyan-400/40">•</span>
+            <span class="text-cyan-300 text-sm md:text-base tracking-wide font-semibold">PO</span>
+          </div>
+          <!-- Date -->
+          <div class="mt-3 text-cyan-200/80 text-xs md:text-sm tracking-wide" id="current-date"></div>
         </div>
-        <div class="text-sm md:text-base text-cyan-200 mt-1">
-          Školenia • Prehliadky • BOZP • PO
-        </div>
-        <div class="mt-2 text-cyan-200 text-sm" id="current-date">
-          <script>
-            const now = new Date();
-            const days = ['Nedeľa','Pondelok','Utorok','Streda','Štvrtok','Piatok','Sobota'];
-            const months = ['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'];
-            document.getElementById('current-date')!.textContent =
-              `${days[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
-          </script>
-        </div>
-      </div>
 
-      <!-- Right: Contact quick info -->
-      <div class="text-right text-sm flex-shrink-0">
-        <div class="text-cyan-200 leading-relaxed">
-          <div>📞 048/416 27 75</div>
-          <div>✉️ ajuva@ajuva.sk</div>
-          <div class="text-xs mt-1 opacity-75">Zvolenská cesta 20, Banská Bystrica</div>
+        <!-- Contact panel -->
+        <div class="flex-shrink-0 text-right">
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-cyan-400/20">
+            <div class="text-white font-bold text-sm tracking-wide">📞 048/416 27 75</div>
+            <div class="text-cyan-200 text-xs mt-1">✉️ ajuva@ajuva.sk</div>
+            <div class="text-cyan-300/60 text-[10px] mt-1.5 leading-tight">
+              Zvolenská cesta 20<br/>974 01 Banská Bystrica
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom accent line -->
-  <div class="bg-accent h-0.5 w-full opacity-60"></div>
+    <!-- Bottom glow bar -->
+    <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-accent to-transparent opacity-70"></div>
+  </div>
 </div>
+
+<script>
+  const now = new Date();
+  const days = ['Nedeľa','Pondelok','Utorok','Streda','Štvrtok','Piatok','Sobota'];
+  const months = ['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'];
+  const el = document.getElementById('current-date');
+  if (el) {
+    el.textContent = `${days[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
+  }
+</script>
