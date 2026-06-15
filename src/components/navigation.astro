@@ -39,9 +39,9 @@ const currentPath = Astro.url?.pathname || '/';
             <ul class="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-[220px]
                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
                        transition-all duration-200 z-50
-                       bg-navy/98 backdrop-blur-sm
-                       rounded-lg border border-white/10
-                       shadow-lg shadow-black/30
+                       bg-navy-900
+                       rounded-lg border border-white/15
+                       shadow-2xl shadow-black/50
                        translate-y-1 group-hover:translate-y-0">
               {item.children.map((child, idx) => (
                 child.isSectionHeader ? (
