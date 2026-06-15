@@ -2,35 +2,33 @@
 import { companyInfo } from '../data/content';
 ---
 
-<footer class="bg-navy-900 text-white mt-8">
-  <!-- Hairline accent -->
-  <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-  <div class="max-w-6xl mx-auto px-4 py-8">
-    <!-- Secondary links (from VIAC) -->
-    <div class="text-center text-xs mb-4 flex flex-wrap justify-center gap-x-4 gap-y-1 opacity-60">
-      <a href="/predpisy/bezpecnost-prace" class="hover:opacity-100 transition">Predpisy</a>
-      <a href="/tlaciva/tlaciva" class="hover:opacity-100 transition">Tlačivá</a>
-      <a href="/zabava/vtipy" class="hover:opacity-100 transition">Zábava</a>
-      <a href="/ponukame" class="hover:opacity-100 transition">Ponúkame</a>
+<footer class="bg-navy-900 text-white mt-0">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Secondary links (from navigation "Viac" group) -->
+    <div class="footer-links text-center mb-6 flex flex-wrap justify-center gap-x-5 gap-y-2">
+      <a href="/predpisy/bezpecnost-prace">PREDPISY</a>
+      <a href="/tlaciva/tlaciva">TLAČIVÁ</a>
+      <a href="/zabava/vtipy">ZÁBAVA</a>
+      <a href="/ponukame">PONÚKAME</a>
+      <a href="/imsitemap.html" class="opacity-40">Mapa stránky</a>
     </div>
 
-    <!-- Main footer links -->
-    <div class="footer-links text-center mb-5 flex flex-wrap justify-center gap-x-3 gap-y-1">
-      <a href="/">DOMOV</a><span class="opacity-30">|</span>
-      <a href="/skolenia/kuric-1-5-triedy">ŠKOLENIA</a><span class="opacity-30">|</span>
-      <a href="/prehliadky/vtz-tlakove">PREHLIADKY</a><span class="opacity-30">|</span>
-      <a href="/bozp-po/ponuka-bozp">BOZP &amp; PO</a><span class="opacity-30">|</span>
-      <a href="/o-nas/profil">O NÁS</a><span class="opacity-30">|</span>
-      <a href="/kontakt/ajuva">KONTAKT</a>
-    </div>
+    <hr class="border-white/10 mb-6" />
 
-    <hr class="border-white/10 mb-5" />
+    <!-- Main links -->
+    <div class="footer-links text-center text-sm mb-6 flex flex-wrap justify-center gap-x-3 gap-y-1">
+      <a href="/">Domov</a><span class="opacity-30">|</span>
+      <a href="/skolenia/kuric-1-5-triedy">Školenia</a><span class="opacity-30">|</span>
+      <a href="/prehliadky/vtz-tlakove">Prehliadky</a><span class="opacity-30">|</span>
+      <a href="/bozp-po/ponuka-bozp">BOZP, PO</a><span class="opacity-30">|</span>
+      <a href="/kontakt/ajuva">Kontakt</a><span class="opacity-30">|</span>
+      <a href="/o-nas/profil">O nás</a>
+    </div>
 
     <div class="text-center text-xs text-white/40 space-y-1">
-      <p>Aktualizované: <span class="text-white/60 font-semibold">{companyInfo.lastUpdated}</span></p>
+      <p>Aktualizované: <strong class="text-white/60">{companyInfo.lastUpdated}</strong></p>
       <p>&copy; {new Date().getFullYear()} AJUVA Š+S s.r.o. — Všetky práva vyhradené.</p>
-      <p class="text-white/30">Zvolenská cesta 20, 974 01 Banská Bystrica | {companyInfo.tel} | {companyInfo.email}</p>
+      <p>Zvolenská cesta 20, 974 01 Banská Bystrica · {companyInfo.tel} · {companyInfo.email}</p>
     </div>
   </div>
 </footer>

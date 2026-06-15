@@ -7,14 +7,14 @@ import Jokes from '../components/Jokes.astro';
 ---
 
 <MainLayout>
-  <!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
-  <section class="header-gradient text-white py-12 md:py-16 px-4">
-    <div class="max-w-6xl mx-auto text-center">
-      <h1 class="font-display text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="bg-gradient-to-b from-navy-900 to-navy-700 text-white section-pad">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="font-display text-3xl md:text-4xl font-semibold leading-tight tracking-tight">
         Aktuálne termíny školení
       </h1>
-      <p class="mt-3 text-base text-white/70 max-w-xl mx-auto">
-        Odborná príprava a revízie vyhradených technických zariadení — tlakové, plynové, zdvíhacie
+      <p class="mt-3 text-white/70 text-sm max-w-xl mx-auto">
+        Odborná príprava, prehliadky a revízie vyhradených technických zariadení
       </p>
 
       <div class="flex flex-wrap justify-center gap-3 mt-6">
@@ -28,211 +28,134 @@ import Jokes from '../components/Jokes.astro';
         </a>
       </div>
 
-      <!-- Alert warning -->
-      <div class="alert-warning max-w-2xl mx-auto mt-6 p-4 text-left text-sm">
-        <p class="font-semibold text-ink">Pozor — legislatívne zmeny</p>
-        <p class="mt-1 text-muted">Od 01.01.2023 sú platné nové ustanovenia zákona č.124/2006 Z.z. (zmeny v §16). Novelizovaná vyhláška č.356/2007 Z.z. vyhl. č.66/2023.</p>
+      <div class="alert-warning max-w-2xl mx-auto mt-6 p-4 text-left text-sm text-red-800">
+        <strong class="font-semibold">Pozor!</strong>
+        Od 01.01.2023 sú platné nové ustanovenia zákona č.124/2006 Z.z. Zmeny sú aj v §16.
+        Je novelizovaná vyhláška č.356/2007 Z.z. o obsahu a rozsahu vzdelávania (vyhl. č.66/2023).
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ TERMÍN CARDS ══════════════════════════════════ -->
-  <section class="max-w-6xl mx-auto px-4 section-pad">
-    <div class="grid md:grid-cols-2 gap-5">
-      <div class="card p-6 border-l-[3px] border-l-accent">
-        <p class="eyebrow">Školenie</p>
-        <h3 class="font-display text-xl font-semibold text-navy-900 mt-1">Kurič I. – V. triedy</h3>
-        <p class="text-muted text-sm mt-2 leading-relaxed">Odborná a aktualizačná príprava obslúh vyhradených technických zariadení tlakových a plynových.</p>
-        <div class="flex items-center gap-2 mt-3 text-sm font-semibold text-navy-700">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          21.–22.01.2026
+  <!-- ═══════════════ TERMÍNY CARDS ═══════════════ -->
+  <section class="section-pad">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card p-6">
+          <p class="eyebrow">Školenie</p>
+          <h3 class="font-display text-xl font-semibold text-navy-900 mt-2 leading-snug">Kurič I. – V. triedy</h3>
+          <p class="text-muted text-sm mt-2">Odborná a aktualizačná príprava obslúh VTZ tlakových a plynových</p>
+          <p class="font-semibold text-navy-900 mt-3 text-sm flex items-center gap-1.5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            21. – 22. 01. 2026
+          </p>
+          <a href="/skolenia/kuric-1-5-triedy" class="inline-flex items-center gap-1 text-accent text-sm font-semibold mt-3 hover:text-accent-600 transition">
+            Viac informácií <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
-        <a href="/skolenia/kuric-1-5-triedy" class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-accent hover:text-accent-600 transition">
-          Viac informácií
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
-      <div class="card p-6 border-l-[3px] border-l-accent">
-        <p class="eyebrow">Školenie</p>
-        <h3 class="font-display text-xl font-semibold text-navy-900 mt-1">Revizní technici a opravy VTZ</h3>
-        <p class="text-muted text-sm mt-2 leading-relaxed">Aktualizačná odborná príprava pre revíznych technikov a osoby na opravy VTZ tlakové a plynové.</p>
-        <div class="flex items-center gap-2 mt-3 text-sm font-semibold text-navy-700">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Ďalšie termíny v časti ŠKOLENIA
+        <div class="card p-6">
+          <p class="eyebrow">Školenie</p>
+          <h3 class="font-display text-xl font-semibold text-navy-900 mt-2 leading-snug">Revízni technici a opravy VTZ</h3>
+          <p class="text-muted text-sm mt-2">Aktualizačná odborná príprava pre revíznych technikov a osoby na opravy VTZ tlakové a plynové</p>
+          <p class="font-semibold text-navy-900 mt-3 text-sm flex items-center gap-1.5">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Ďalšie termíny v časti Školenia
+          </p>
+          <a href="/skolenia/kuric-1-5-triedy" class="inline-flex items-center gap-1 text-accent text-sm font-semibold mt-3 hover:text-accent-600 transition">
+            Viac informácií <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
         </div>
-        <a href="/skolenia/kuric-1-5-triedy" class="inline-flex items-center gap-1 mt-3 text-sm font-semibold text-accent hover:text-accent-600 transition">
-          Viac informácií
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ BODY: 2-COL GRID ══════════════════════════════════ -->
-  <section class="max-w-6xl mx-auto px-4 pb-12">
-    <div class="grid md:grid-cols-5 gap-6">
-      <!-- LEFT (3/5): Gallery + Services + Jokes -->
-      <div class="md:col-span-3 space-y-10">
-        <!-- Gallery -->
-        <div>
-          <p class="eyebrow mb-1">Galéria</p>
-          <div class="accent-line mb-4"></div>
-          <Gallery />
-        </div>
+  <hr class="hairline max-w-6xl mx-auto" />
 
-        <!-- Services -->
-        <div class="card p-6">
-          <p class="eyebrow">Služby</p>
-          <div class="accent-line mb-4"></div>
-          <h2 class="font-display text-2xl font-semibold text-navy-900 mb-4">
-            AJUVA Š+S s.r.o. Vám ponúka
-          </h2>
-          <ServiceList />
-        </div>
-
-        <!-- Jokes -->
-        <div class="card p-6">
-          <p class="eyebrow">Zábava</p>
-          <div class="accent-line mb-4"></div>
-          <h2 class="font-sans text-xl font-semibold text-ink mb-3">
-            <a href="/zabava/vtipy" class="hover:text-navy-700 transition">Vtipy na tento týždeň</a>
-          </h2>
-          <Jokes />
-        </div>
-      </div>
-
-      <!-- RIGHT (2/5): Info + Contact + Name-day + Map -->
-      <div class="md:col-span-2 space-y-6">
-        <!-- Aktuálne informácie -->
-        <div class="card p-5">
-          <p class="eyebrow">Aktuálne informácie</p>
-          <div class="accent-line mb-4"></div>
-          <div class="scroll-box" style="height: 210px;">
-            <div class="scroll-box-inner text-sm text-ink leading-relaxed space-y-4">
-              <div>
-                <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-navy-700 hover:underline">ŠKOLENIA</a> nájdete ďalšie aktuálne termíny pre odbornú a aktualizačnú odbornú prípravu obslúh vyhradených technických zariadení tlakových a plynových.</p>
-                <p class="mt-1 font-semibold text-navy-900">Aktuálny termín: <span class="text-accent">21.01 a 22.01.2026</span></p>
-              </div>
-              <div>
-                <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-navy-700 hover:underline">ŠKOLENIA</a> nájdete termíny pre aktualizačnú odbornú prípravu revíznych technikov a osoby na opravy VTZ tlakové a plynové.</p>
-              </div>
-              <div class="alert-warning p-3 text-sm text-ink">
-                <p class="font-semibold">Pozor!</p>
-                <p class="mt-1 text-muted">Od 01.01.2023 sú platné nové ustanovenia zákona č.124/2006 Z.z. (zmeny v §16). Novelizovaná vyhláška č.356/2007 Z.z. o obsahu a rozsahu vzdelávania vyhl. č.66/2023.</p>
-              </div>
-            </div>
+  <!-- ═══════════════ BODY 2-col ═══════════════ -->
+  <section class="section-pad">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-5 gap-8">
+        <!-- LEFT (3/5) -->
+        <div class="md:col-span-3 space-y-10">
+          <div>
+            <p class="eyebrow">Galéria</p>
+            <h2 class="font-sans text-2xl font-semibold text-ink mt-1 mb-4">Z našich školení</h2>
+            <Gallery />
+          </div>
+          <div class="card p-6">
+            <p class="eyebrow">Služby</p>
+            <h2 class="font-sans text-2xl font-semibold text-ink mt-1 mb-5">Spoločnosť AJUVA Š+S Vám ponúka</h2>
+            <ServiceList />
+          </div>
+          <div class="card p-6">
+            <p class="eyebrow">Zábava</p>
+            <h2 class="font-sans text-2xl font-semibold text-ink mt-1 mb-4"><a href="/zabava/vtipy" class="hover:text-navy-700 transition">Vtipy na tento týždeň</a></h2>
+            <Jokes />
           </div>
         </div>
 
-        <!-- Contact -->
-        <ContactCard />
-
-        <!-- Name day widget -->
-        <div class="card p-5 text-center" style="background: linear-gradient(135deg, var(--color-navy-900), var(--color-navy-700)); color: white;">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white/60">Dnes má meniny</p>
-          <div id="name-day" class="font-display text-2xl font-semibold mt-1">—</div>
-          <p class="text-xs text-white/50 mt-1">Slovenský kalendár</p>
-          <div class="mt-3 text-xs text-white/70 italic leading-relaxed" id="daily-quote"></div>
-        </div>
-
-        <!-- Map -->
-        <div class="card overflow-hidden">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.304570123456!2d19.1345!3d48.7395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471516c5a1b0e5f7%3A0x4a2b1c3d4e5f6789!2sZvolensk%C3%A1%20cesta%2020%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1699999999999"
-            width="100%"
-            height="260"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa — AJUVA, Zvolenská cesta 20, Banská Bystrica"
-            class="w-full"
-          >
-          </iframe>
-          <div class="p-3 flex items-center justify-between bg-white">
-            <div>
-              <p class="text-sm font-semibold text-ink">Zvolenská cesta 20</p>
-              <p class="text-xs text-muted">Banská Bystrica</p>
+        <!-- RIGHT (2/5) -->
+        <div class="md:col-span-2 space-y-6">
+          <div class="card p-6">
+            <p class="eyebrow">Aktuálne informácie</p>
+            <div class="accent-line mb-4"></div>
+            <div class="scroll-box" style="height:210px;">
+              <div class="scroll-box-inner text-ink text-sm leading-relaxed space-y-4">
+                <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-navy-700 hover:underline">ŠKOLENIA</a> nájdete aktuálne termíny pre odbornú a aktualizačnú odbornú prípravu obslúh VTZ tlakových a plynových.</p>
+                <p>Aktuálny termín — <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-accent hover:underline">21.01 a 22.01.2026</a></p>
+                <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-navy-700 hover:underline">ŠKOLENIA</a> nájdete termíny pre aktualizačnú odbornú prípravu revíznych technikov.</p>
+              </div>
             </div>
-            <a
-              href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica"
-              target="_blank"
-              rel="noopener"
-              class="inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-600 transition"
-            >
-              Navigovať
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
+          </div>
+          <ContactCard />
+          <div class="card p-6 text-center text-white" style="background:linear-gradient(135deg,#0A1E6E,#16308F);">
+            <p class="eyebrow" style="color:rgba(255,255,255,0.7)">Dnes má meniny</p>
+            <div id="name-day" class="font-display text-3xl font-semibold mt-2">—</div>
+            <p class="text-white/50 text-xs mt-1">Slovenský kalendár</p>
+            <div class="mx-auto mt-4 mb-4 w-16 h-px bg-white/20"></div>
+            <div class="text-white/70 text-xs italic max-w-xs mx-auto leading-relaxed" id="daily-quote"></div>
+          </div>
+          <div class="card overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.304570123456!2d19.1345!3d48.7395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471516c5a1b0e5f7%3A0x4a2b1c3d4e5f6789!2sZvolensk%C3%A1%20cesta%2020%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1699999999999" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — AJUVA Banská Bystrica, Zvolenská cesta 20" class="w-full"></iframe>
+            <div class="p-4 flex items-center justify-between bg-white">
+              <div><p class="text-sm font-semibold text-navy-900">Zvolenská cesta 20, B. Bystrica</p><p class="text-xs text-muted">Parkovanie pri budove</p></div>
+              <a href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica" target="_blank" rel="noopener" class="text-accent text-sm font-semibold hover:text-accent-600 transition inline-flex items-center gap-1">Navigovať <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════ THANKS + STATS ══════════════════════════════════ -->
-  <section class="max-w-6xl mx-auto px-4 pb-12">
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="card p-6 text-center">
-        <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center rounded-full bg-surface">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-navy-700)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/></svg>
+  <hr class="hairline max-w-6xl mx-auto" />
+
+  <!-- ═══════════════ THANKS + STATS ═══════════════ -->
+  <section class="section-pad">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card p-7 text-center">
+          <img src="/images/035.gif" alt="" class="w-20 h-auto mx-auto mb-3 opacity-80" aria-hidden="true" />
+          <h3 class="font-semibold text-navy-900 text-lg">Ďakujeme za návštevu</h3>
+          <p class="text-muted text-sm mt-1">Každý návrh na zlepšenie nás poteší.</p>
+          <p class="font-semibold text-navy-900 text-sm mt-2">ajuva@ajuva.sk</p>
         </div>
-        <h3 class="font-sans font-semibold text-ink text-sm">Ďakujeme za návštevu</h3>
-        <p class="text-xs text-muted mt-1">Každý návrh na zlepšenie nás poteší.</p>
-        <p class="font-semibold text-navy-700 text-sm mt-2">ajuva@ajuva.sk</p>
-      </div>
-      <div class="card p-5 flex flex-col justify-center items-center">
-        <div class="font-display text-3xl font-semibold text-navy-900">2006</div>
-        <p class="text-xs text-muted mt-1">Na trhu od roku</p>
-      </div>
-      <div class="card p-5 flex flex-col justify-center items-center">
-        <div class="font-display text-3xl font-semibold text-navy-900">10+</div>
-        <p class="text-xs text-muted mt-1">Oblastí služieb</p>
+        <div class="card p-7 flex flex-col justify-center items-center text-center">
+          <div class="font-display text-3xl font-bold text-navy-900">2006</div>
+          <p class="text-muted text-sm mt-1">Na trhu od roku</p>
+        </div>
+        <div class="card p-7 flex flex-col justify-center items-center text-center">
+          <div class="font-display text-3xl font-bold text-navy-900">10+</div>
+          <p class="text-muted text-sm mt-1">Oblastí služieb</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Updated -->
-  <div class="text-center text-xs text-muted pb-8">
-    Aktualizované: 29.12.2025
-  </div>
+  <div class="text-center pb-8"><p class="text-xs text-muted">Aktualizované: 29. 12. 2025</p></div>
 
-  <!-- ═══════ NAME-DAY SCRIPT ═══════ -->
   <script>
-    const nameDays: Record<string, string> = {
-      '1.1.': 'Courtney','2.1.': 'Alexandra','3.1.': 'Daniela','4.1.': 'Drahoslav','5.1.': 'Andrea',
-      '6.1.': 'Antónia','7.1.': 'Bohuslava','8.1.': 'Severín','9.1.': 'Alex','10.1.': 'Dáša',
-      '11.1.': 'Malvína','12.1.': 'Ernest','13.1.': 'Rastislav','14.1.': 'Radovan','15.1.': 'Dobroslav',
-      '16.1.': 'Kristína','17.1.': 'Nataša','18.1.': 'Bohdana','19.1.': 'Mário','20.1.': 'Dalibor',
-      '21.1.': 'Vincent','22.1.': 'Zora','23.1.': 'Miloš','24.1.': 'Timotej','25.1.': 'Gejza',
-      '26.1.': 'Tamara','27.1.': 'Bohuš','28.1.': 'Alfonz','29.1.': 'Gašpar','30.1.': 'Ema','31.1.': 'Emil',
-      '1.2.': 'Tatiana','2.2.': 'Erik','3.2.': 'Blažej','4.2.': 'Veronika','5.2.': 'Agáta',
-      '6.2.': 'Dorota','7.2.': 'Vanda','8.2.': 'Zoja','9.2.': 'Zdenko','10.2.': 'Gabriela',
-      '11.2.': 'Dezider','12.2.': 'Perla','13.2.': 'Arpád','14.2.': 'Valentín','15.2.': 'Pravoslav',
-      '16.2.': 'Ida','17.2.': 'Miloslava','18.2.': 'Jaromír','19.2.': 'Vlasta','20.2.': 'Lívia',
-      '21.2.': 'Eleonóra','22.2.': 'Etela','23.2.': 'Roman','24.2.': 'Matej','25.2.': 'Frederik',
-      '26.2.': 'Viktor','27.2.': 'Alexander','28.2.': 'Zlatica','29.2.': 'Radomír',
-      '1.3.': 'Albín','2.3.': 'Anežka','3.3.': 'Bohumil','4.3.': 'Kazimír','5.3.': 'Fridrich',
-      '6.3.': 'Radoslav','7.3.': 'Tomáš','8.3.': 'Alan','9.3.': 'Františka','10.3.': 'Branislav',
-      '11.3.': 'Angelina','12.3.': 'Gregor','13.3.': 'Vlastimil','14.3.': 'Matilda','15.3.': 'Svetlana',
-      '15.6.': 'Vít','16.6.': 'Bianka',
-    };
-    const quotes = [
-      '„Bezpečnosť nie je produkt, ale proces."',
-      '„Dobrý kurič je ten, koho nevidno, ale cítiť teplo."',
-      '„Kto je pripravený, nie je prekvapený."',
-      '„Najlepší hasič je ten, ktorý nemusel hasiť."',
-      '„Vedomosti sú teplo, ktoré nikdy nevyhasne."',
-      '„Práca bez BOZP je ako oheň bez komína."',
-    ];
-    const el = document.getElementById('name-day');
-    const quoteEl = document.getElementById('daily-quote');
-    if (el && quoteEl) {
-      const now = new Date();
-      const key = `${now.getDate()}.${now.getMonth() + 1}.`;
-      el.textContent = nameDays[key] || '—';
-      const doy = Math.floor((now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) / 86400000);
-      quoteEl.textContent = quotes[doy % quotes.length];
-    }
+    const nd={'1.1.':'Courtney','2.1.':'Alexandra','3.1.':'Daniela','4.1.':'Drahoslav','5.1.':'Andrea','6.1.':'Antónia','7.1.':'Bohuslava','8.1.':'Severín','9.1.':'Alex','10.1.':'Dáša','11.1.':'Malvína','12.1.':'Ernest','13.1.':'Rastislav','14.1.':'Radovan','15.1.':'Dobroslav','16.1.':'Kristína','17.1.':'Nataša','18.1.':'Bohdana','19.1.':'Mário','20.1.':'Dalibor','21.1.':'Vincent','22.1.':'Zora','23.1.':'Miloš','24.1.':'Timotej','25.1.':'Gejza','26.1.':'Tamara','27.1.':'Bohuš','28.1.':'Alfonz','29.1.':'Gašpar','30.1.':'Ema','31.1.':'Emil','1.2.':'Tatiana','2.2.':'Erik','3.2.':'Blažej','4.2.':'Veronika','5.2.':'Agáta','6.2.':'Dorota','7.2.':'Vanda','8.2.':'Zoja','9.2.':'Zdenko','10.2.':'Gabriela','11.2.':'Dezider','12.2.':'Perla','13.2.':'Arpád','14.2.':'Valentín','15.2.':'Pravoslav','16.2.':'Ida','17.2.':'Miloslava','18.2.':'Jaromír','19.2.':'Vlasta','20.2.':'Lívia','21.2.':'Eleonóra','22.2.':'Etela','23.2.':'Roman','24.2.':'Matej','25.2.':'Frederik','26.2.':'Viktor','27.2.':'Alexander','28.2.':'Zlatica','29.2.':'Radomír','1.3.':'Albín','2.3.':'Anežka','3.3.':'Bohumil','4.3.':'Kazimír','5.3.':'Fridrich','6.3.':'Radoslav','7.3.':'Tomáš','8.3.':'Alan','9.3.':'Františka','10.3.':'Branislav','11.3.':'Angelina','12.3.':'Gregor','13.3.':'Vlastimil','14.3.':'Matilda','15.3.':'Svetlana','16.3.':'Boleslav','17.3.':'Ľubica','18.3.':'Eduard','19.3.':'Jozef','20.3.':'Víťazoslav','21.3.':'Blahoslav','22.3.':'Beňadik','23.3.':'Adrián','24.3.':'Gabriel','25.3.':'Marián','26.3.':'Emanuel','27.3.':'Alena','28.3.':'Soňa','29.3.':'Miroslav','30.3.':'Vieroslava','31.3.':'Benjamín','1.4.':'Hugo','2.4.':'Zita','3.4.':'Richard','4.4.':'Izidor','5.4.':'Miroslava','6.4.':'Irena','7.4.':'Zoltán','8.4.':'Albert','9.4.':'Milena','10.4.':'Igor','11.4.':'Július','12.4.':'Estera','13.4.':'Aleš','14.4.':'Justin','15.4.':'Fedor','16.4.':'Dana','17.4.':'Rudolf','18.4.':'Valér','19.4.':'Jela','20.4.':'Marcel','21.4.':'Ervín','22.4.':'Slavomír','23.4.':'Vojtech','24.4.':'Juraj','25.4.':'Marek','26.4.':'Jaroslava','27.4.':'Jaroslav','28.4.':'Jarmila','29.4.':'Simona','30.4.':'Anastázia','1.5.':'Amarila','2.5.':'Žigmund','3.5.':'Galina','4.5.':'Florián','5.5.':'Lesana','6.5.':'Hermína','7.5.':'Monika','8.5.':'Ingrida','9.5.':'Roland','10.5.':'Viktória','11.5.':'Blažena','12.5.':'Pankrác','13.5.':'Servác','14.5.':'Bonifác','15.5.':'Žofia','16.5.':'Svetozár','17.5.':'Gizela','18.5.':'Viola','19.5.':'Gertrúda','20.5.':'Bernard','21.5.':'Zina','22.5.':'Júlia','23.5.':'Želmíra','24.5.':'Ela','25.5.':'Urban','26.5.':'Dušan','27.5.':'Iveta','28.5.':'Viliam','29.5.':'Vilma','30.5.':'Ferdinand','31.5.':'Petrana','1.6.':'Žaneta','2.6.':'Xénia','3.6.':'Karolína','4.6.':'Lenka','5.6.':'Laura','6.6.':'Norbert','7.6.':'Róbert','8.6.':'Medard','9.6.':'Stanislava','10.6.':'Margaréta','11.6.':'Dobroslava','12.6.':'Zlatko','13.6.':'Anton','14.6.':'Vasil','15.6.':'Vít','16.6.':'Bianka','17.6.':'Adolf','18.6.':'Vratislav','19.6.':'Alfréd','20.6.':'Valéria','21.6.':'Alojz','22.6.':'Paulína','23.6.':'Sidónia','24.6.':'Ján','25.6.':'Olívia','26.6.':'Adriána','27.6.':'Ladislav','28.6.':'Beáta','29.6.':'Peter','30.6.':'Melánia','1.7.':'Diana','2.7.':'Berta','3.7.':'Miroslav','4.7.':'Prokop','5.7.':'Cyril','6.7.':'Patrik','7.7.':'Oliver','8.7.':'Ivan','9.7.':'Lujza','10.7.':'Amália','11.7.':'Milota','12.7.':'Nina','13.7.':'Margita','14.7.':'Kamil','15.7.':'Henrich','16.7.':'Drahomír','17.7.':'Bohuslav','18.7.':'Kamila','19.7.':'Dušana','20.7.':'Eliáš','21.7.':'Daniel','22.7.':'Magdaléna','23.7.':'Oľga','24.7.':'Vladimír','25.7.':'Jakub','26.7.':'Anna','27.7.':'Božena','28.7.':'Krištof','29.7.':'Marta','30.7.':'Libuša','31.7.':'Ignác','1.8.':'Božidara','2.8.':'Gustáv','3.8.':'Jerguš','4.8.':'Dominik','5.8.':'Hortenzia','6.8.':'Jozefína','7.8.':'Štefánia','8.8.':'Oskár','9.8.':'Ľubomíra','10.8.':'Vavrinec','11.8.':'Zuzana','12.8.':'Darina','13.8.':'Ľubomír','14.8.':'Mojmír','15.8.':'Marcela','16.8.':'Leonard','17.8.':'Milica','18.8.':'Elena','19.8.':'Lýdia','20.8.':'Anabela','21.8.':'Jana','22.8.':'Tichomír','23.8.':'Filip','24.8.':'Bartolomej','25.8.':'Ľudovít','26.8.':'Samuel','27.8.':'Silvia','28.8.':'Augustín','29.8.':'Nikola','30.8.':'Ružena','31.8.':'Nora','1.9.':'Drahoslava','2.9.':'Linda','3.9.':'Belo','4.9.':'Rozália','5.9.':'Regína','6.9.':'Alica','7.9.':'Marianna','8.9.':'Miriama','9.9.':'Martina','10.9.':'Oleg','11.9.':'Bystrík','12.9.':'Mária','13.9.':'Ctibor','14.9.':'Ľudomil','15.9.':'Jolana','16.9.':'Ľudmila','17.9.':'Olympia','18.9.':'Eugénia','19.9.':'Konštantín','20.9.':'Ľuboslav','21.9.':'Matúš','22.9.':'Móric','23.9.':'Zdenka','24.9.':'Ľuboš','25.9.':'Vladislav','26.9.':'Edita','27.9.':'Cyprián','28.9.':'Václav','29.9.':'Michal','30.9.':'Jarolím','1.10.':'Arnold','2.10.':'Levoslav','3.10.':'Stela','4.10.':'František','5.10.':'Viera','6.10.':'Natália','7.10.':'Eliška','8.10.':'Brigita','9.10.':'Dionýz','10.10.':'Slavomíra','11.10.':'Valentína','12.10.':'Maximilián','13.10.':'Koloman','14.10.':'Boris','15.10.':'Terézia','16.10.':'Vladimíra','17.10.':'Hedviga','18.10.':'Lukáš','19.10.':'Kristián','20.10.':'Vendelín','21.10.':'Uršuľa','22.10.':'Sergej','23.10.':'Alojzia','24.10.':'Kvetoslava','25.10.':'Aurél','26.10.':'Demeter','27.10.':'Sabína','28.10.':'Dobromila','29.10.':'Klára','30.10.':'Šimon','31.10.':'Aurélia','1.11.':'Denis','2.11.':'Pamiatka zosnulých','3.11.':'Hubert','4.11.':'Karol','5.11.':'Imrich','6.11.':'Renáta','7.11.':'René','8.11.':'Bohumír','9.11.':'Teodor','10.11.':'Tibor','11.11.':'Martin','12.11.':'Svätopluk','13.11.':'Stanislav','14.11.':'Irma','15.11.':'Leopold','16.11.':'Agnesa','17.11.':'Klaudia','18.11.':'Eugen','19.11.':'Alžbeta','20.11.':'Félix','21.11.':'Elvíra','22.11.':'Cecília','23.11.':'Klement','24.11.':'Emília','25.11.':'Katarína','26.11.':'Kornel','27.11.':'Milan','28.11.':'Henrieta','29.11.':'Vratko','30.11.':'Ondrej','1.12.':'Edmund','2.12.':'Bibiána','3.12.':'Oldrich','4.12.':'Barbora','5.12.':'Oto','6.12.':'Mikuláš','7.12.':'Ambróz','8.12.':'Marína','9.12.':'Izabela','10.12.':'Radúz','11.12.':'Hilda','12.12.':'Otília','13.12.':'Lucia','14.12.':'Branislava','15.12.':'Ivica','16.12.':'Albína','17.12.':'Kornélia','18.12.':'Sláva','19.12.':'Judita','20.12.':'Dagmara','21.12.':'Bohdan','22.12.':'Adela','23.12.':'Nadežda','24.12.':'Adam','25.12.':'1. sviatok vianočný','26.12.':'Štefan','27.12.':'Filoména','28.12.':'Ivana','29.12.':'Milada','30.12.':'Dávid','31.12.':'Silvester'};
+    const quotes=["\"Bezpečnosť nie je produkt, ale proces.\"","\"Dobrý kurič je ten, koho nevidno, ale cítiť teplo.\"","\"Kto je pripravený, nie je prekvapený.\"","\"Najlepší hasič je ten, ktorý nemusel hasiť.\"","\"Vedomosti sú teplo, ktoré nikdy nevyhasne.\"","\"Práca bez BOZP je ako oheň bez komína.\""];
+    const el=document.getElementById('name-day'),qe=document.getElementById('daily-quote');
+    if(el&&qe){const n=new Date(),k=`${n.getDate()}.${n.getMonth()+1}.`;el.textContent=nd[k]||'—';const d=Math.floor((n-new Date(n.getFullYear(),0,0))/86400000);qe.textContent=quotes[d%quotes.length]||quotes[0];}
   </script>
 </MainLayout>
