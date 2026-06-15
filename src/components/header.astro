@@ -2,62 +2,59 @@
 ---
 
 <div class="header-full relative overflow-hidden">
-  <!-- Top dark bar -->
   <div class="bg-[#000033] h-1.5 w-full"></div>
 
-  <!-- Main header area -->
   <div class="header-gradient relative">
-    <!-- Subtle pattern overlay -->
     <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 12px);"></div>
 
-    <div class="max-w-5xl mx-auto px-4 py-4">
-      <div class="flex flex-col md:flex-row items-center gap-5">
-        <!-- LOGO SVG -->
-        <a href="/" title="AJUVA Š+S s.r.o. — Domov" class="flex-shrink-0 group">
+    <div class="max-w-5xl mx-auto px-4 py-3">
+      <div class="flex items-center gap-4">
+        <!-- Logo badge from original site -->
+        <a href="/" title="AJUVA Š+S s.r.o." class="flex-shrink-0 group">
           <img
-            src="/images/logo.svg"
+            src="/images/logo.png"
             alt="AJUVA Š+S s.r.o."
-            class="h-20 md:h-24 w-auto transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
-            style="filter: drop-shadow(0 0 12px rgba(128,255,255,0.3));"
+            class="h-20 w-auto transition-all duration-300 rounded-full group-hover:scale-110 group-hover:brightness-110"
+            style="filter: drop-shadow(0 0 10px rgba(128,255,255,0.35));"
           />
         </a>
 
-        <!-- Company description + tagline -->
-        <div class="flex-1 text-center md:text-left">
-          <div class="text-xl md:text-2xl font-bold tracking-wider text-white" style="font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 8px rgba(0,0,0,0.5), 0 0 20px rgba(128,255,255,0.15);">
-            Školenia · Prehliadky · BOZP · PO
+        <div class="flex-1 text-center">
+          <div class="text-xl md:text-2xl font-bold tracking-wide text-white" style="font-family: Georgia, 'Times New Roman', serif; text-shadow: 0 2px 6px rgba(0,0,0,0.5);">
+            AJUVA Š+S s.r.o.
           </div>
-          <div class="text-cyan-200/70 text-xs md:text-sm mt-1.5 tracking-wide">
-            Odborná príprava a revízie vyhradených technických zariadení
+          <div class="flex items-center justify-center gap-2 mt-1">
+            <span class="text-cyan-300 text-xs md:text-sm">Školenia</span>
+            <span class="text-cyan-400/40">·</span>
+            <span class="text-cyan-300 text-xs md:text-sm">Prehliadky</span>
+            <span class="text-cyan-400/40">·</span>
+            <span class="text-cyan-300 text-xs md:text-sm">BOZP</span>
+            <span class="text-cyan-400/40">·</span>
+            <span class="text-cyan-300 text-xs md:text-sm">PO</span>
           </div>
-          <!-- Date -->
-          <div class="mt-2 text-cyan-200/60 text-xs tracking-wide" id="current-date"></div>
+          <div class="mt-1.5 text-cyan-200/60 text-xs" id="current-date"></div>
         </div>
 
-        <!-- Contact panel -->
         <div class="flex-shrink-0 text-right">
-          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-cyan-400/20">
-            <div class="text-white font-bold text-sm tracking-wide">📞 048/416 27 75</div>
-            <div class="text-cyan-200 text-xs mt-1">✉️ ajuva@ajuva.sk</div>
-            <div class="text-cyan-300/60 text-[10px] mt-1.5 leading-tight">
-              Zvolenská cesta 20<br/>974 01 Banská Bystrica
-            </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-cyan-400/20">
+            <div class="text-white font-bold text-sm">📞 048/416 27 75</div>
+            <div class="text-cyan-200 text-xs mt-0.5">✉️ ajuva@ajuva.sk</div>
+            <div class="text-cyan-300/60 text-[10px] mt-1">Zvolenská cesta 20, B.Bystrica</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom glow bar -->
     <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-accent to-transparent opacity-70"></div>
   </div>
 </div>
 
 <script>
-  const now = new Date();
-  const days = ['Nedeľa','Pondelok','Utorok','Streda','Štvrtok','Piatok','Sobota'];
-  const months = ['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'];
-  const el = document.getElementById('current-date');
-  if (el) {
-    el.textContent = `${days[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
-  }
+  (function() {
+    const now = new Date();
+    const days = ['Nedeľa','Pondelok','Utorok','Streda','Štvrtok','Piatok','Sobota'];
+    const months = ['január','február','marec','apríl','máj','jún','júl','august','september','október','november','december'];
+    const el = document.getElementById('current-date');
+    if (el) el.textContent = `${days[now.getDay()]}, ${now.getDate()}. ${months[now.getMonth()]} ${now.getFullYear()}`;
+  })();
 </script>
