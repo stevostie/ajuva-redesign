@@ -7,67 +7,61 @@ const currentPath = Astro.url?.pathname || '/';
 <!-- Mobile toggle button -->
 <button
   id="mobile-menu-toggle"
-  class="nav-mobile-toggle w-full bg-navy text-white px-4 py-3 text-left font-bold flex items-center justify-between md:hidden"
+  class="nav-mobile-toggle w-full bg-navy text-white px-4 py-3 text-left font-bold flex items-center justify-between"
   aria-label="Menu"
 >
   <span>☰ MENU</span>
   <span id="mobile-arrow" class="transition-transform duration-300">▼</span>
 </button>
 
-<!-- Desktop Navigation — 2026 3D Style -->
-<nav class="nav-desktop bg-gradient-to-b from-[#000044] via-[#000066] to-[#000088] text-white shadow-2xl border-b-2 border-accent/30 relative z-40">
-  <div class="max-w-5xl mx-auto px-2">
-    <ul class="flex flex-wrap justify-center py-1">
+<!-- Desktop Navigation — clean modern -->
+<nav class="nav-desktop text-white shadow-md relative z-40 border-b border-white/10">
+  <div class="max-w-5xl mx-auto">
+    <ul class="flex flex-wrap justify-center">
       {mainMenu.map((item) => (
-        <li class="relative group perspective-[800px]">
+        <li class="relative group">
           {item.href ? (
             <a
               href={item.href}
-              class={`nav-item block px-3 py-3 text-[13px] font-bold whitespace-nowrap rounded-lg mx-0.5 tracking-wide transition-all duration-300 ${
-                currentPath === item.href
-                  ? 'nav-active bg-cyan-400/20 text-cyan-300 shadow-[0_0_15px_rgba(128,255,255,0.3)] scale-105'
-                  : 'hover:bg-white/5 hover:text-cyan-200 hover:scale-105'
-              }`}
+              class={`nav-item block px-4 py-3 text-[13px] font-semibold whitespace-nowrap tracking-wide ${currentPath === item.href ? 'nav-active' : ''}`}
             >
               {item.label}
             </a>
           ) : (
             <span
-              class={`nav-item block px-3 py-3 text-[13px] font-bold whitespace-nowrap rounded-lg mx-0.5 tracking-wide cursor-pointer transition-all duration-300 ${
-                item.children?.some(c => currentPath === c.href)
-                  ? 'nav-active bg-cyan-400/20 text-cyan-300 shadow-[0_0_15px_rgba(128,255,255,0.3)] scale-105'
-                  : 'group-hover:bg-white/5 group-hover:text-cyan-200 group-hover:scale-105'
-              }`}
+              class={`nav-item block px-4 py-3 text-[13px] font-semibold whitespace-nowrap tracking-wide cursor-pointer ${item.children?.some(c => c.href && currentPath === c.href) ? 'nav-active' : ''}`}
             >
               {item.label}
-              <span class="ml-1 text-[10px] opacity-50 group-hover:opacity-100 transition-opacity">▾</span>
+              <span class="ml-1 text-[10px] opacity-60">▾</span>
             </span>
           )}
           {item.children && item.children.length > 0 && (
-            <ul class="nav-dropdown-3d absolute left-1/2 -translate-x-1/2 top-full mt-1 min-w-[220px]
+            <ul class="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-[220px]
                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                       transition-all duration-300 z-50
-                       bg-gradient-to-b from-[#000066]/98 via-[#000055]/98 to-[#000044]/98
-                       backdrop-blur-xl
-                       rounded-xl border border-cyan-400/20
-                       shadow-[0_20px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(128,255,255,0.1)]
-                       transform-gpu translate-y-2 group-hover:translate-y-0">
+                       transition-all duration-200 z-50
+                       bg-navy/98 backdrop-blur-sm
+                       rounded-lg border border-white/10
+                       shadow-lg shadow-black/30
+                       translate-y-1 group-hover:translate-y-0">
               {item.children.map((child, idx) => (
-                <li style={`animation: dropdown-in 0.3s ease-out ${idx * 0.04}s both`}>
-                  <a
-                    href={child.href}
-                    class={`block px-5 py-2.5 text-sm whitespace-nowrap transition-all duration-200
-                      ${idx === 0 ? 'rounded-t-xl' : ''}
-                      ${idx === item.children.length - 1 ? 'rounded-b-xl' : ''}
-                      ${currentPath === child.href
-                        ? 'bg-cyan-400/15 text-cyan-300 font-semibold'
-                        : 'hover:bg-white/10 hover:text-cyan-200 hover:pl-6'
-                      }`}
-                  >
-                    <span class="mr-2 opacity-40 text-cyan-300">▸</span>
+                child.isSectionHeader ? (
+                  <li class="px-5 pt-3 pb-1 text-[11px] font-bold text-cyan-300/60 uppercase tracking-wider">
                     {child.label}
-                  </a>
-                </li>
+                  </li>
+                ) : (
+                  <li class={idx === 0 || item.children[idx - 1]?.isSectionHeader ? 'mt-0' : ''}>
+                    <a
+                      href={child.href}
+                      class={`block px-5 py-2 text-sm whitespace-nowrap transition-colors duration-150
+                        ${currentPath === child.href
+                          ? 'bg-white/10 text-orange-400 font-semibold'
+                          : 'hover:bg-white/10 hover:text-cyan-200'
+                        }`}
+                    >
+                      {child.label}
+                    </a>
+                  </li>
+                )
               ))}
             </ul>
           )}
@@ -78,27 +72,31 @@ const currentPath = Astro.url?.pathname || '/';
 </nav>
 
 <!-- Mobile menu (hidden by default) -->
-<div id="mobile-menu" class="nav-mobile-menu bg-gradient-to-b from-[#000044] to-navy text-white hidden md:hidden">
-  <ul class="divide-y divide-cyan-400/10">
+<div id="mobile-menu" class="nav-mobile-menu bg-navy text-white hidden">
+  <ul class="divide-y divide-white/10">
     {mainMenu.map((item) => (
       <li>
         {item.href ? (
-          <a href={item.href} class="block px-4 py-3 text-sm font-bold hover:bg-cyan-400/10 hover:text-cyan-200 active:scale-[0.98] transition-all">
+          <a href={item.href} class="block px-4 py-3 text-sm font-semibold hover:bg-white/10 hover:text-cyan-200 transition-colors">
             {item.label}
           </a>
         ) : (
           <details class="group/mob">
-            <summary class="block px-4 py-3 text-sm font-bold cursor-pointer hover:bg-cyan-400/10 hover:text-cyan-200 list-none flex justify-between items-center">
+            <summary class="block px-4 py-3 text-sm font-semibold cursor-pointer hover:bg-white/10 hover:text-cyan-200 list-none flex justify-between items-center">
               {item.label}
               <span class="text-[10px] opacity-50 group-open/mob:rotate-180 transition-transform">▾</span>
             </summary>
-            <ul class="bg-[#000033]/60 backdrop-blur-sm">
+            <ul class="bg-[#000033]/60">
               {item.children?.map((child) => (
-                <li>
-                  <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-cyan-400/10 hover:text-cyan-200 active:scale-[0.98] transition-all">
-                    ▸ {child.label}
-                  </a>
-                </li>
+                child.isSectionHeader ? (
+                  <li class="px-8 pt-3 pb-1 text-[11px] font-bold text-cyan-300/50 uppercase">{child.label}</li>
+                ) : (
+                  <li>
+                    <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-white/10 hover:text-cyan-200 transition-colors">
+                      {child.label}
+                    </a>
+                  </li>
+                )
               ))}
             </ul>
           </details>

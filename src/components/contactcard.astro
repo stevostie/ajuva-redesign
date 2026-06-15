@@ -2,50 +2,44 @@
 import { companyInfo } from '../data/content';
 ---
 
-<div class="card-retro p-5 contact-card">
-  <!-- Fakturačné údaje -->
-  <h2 class="text-xl font-bold text-navy text-center mb-4" style="font-family: Georgia, 'Times New Roman', serif;">
-    FAKTURAČNÉ ÚDAJE:
-  </h2>
+<!-- Fakturačné údaje -->
+<h3 class="font-heading text-lg font-bold text-navy text-center mb-3">FAKTURAČNÉ ÚDAJE</h3>
 
-  <div class="text-center text-sm space-y-1 text-gray-800">
-    <p class="font-bold text-navy">AJUVA Š+S s.r.o.</p>
-    <p>Zvolenská cesta 20</p>
-    <p>974 01 Banská Bystrica</p>
-    <p class="mt-2">IČO: <strong>{companyInfo.ico}</strong></p>
-    <p>DIČ: <strong>{companyInfo.dic}</strong></p>
-    <p>IČ DPH: <strong>{companyInfo.icDph}</strong></p>
-    <p class="text-xs mt-1">Zápis OR OS Banská Bystrica odd. Sro, vložka č.10331/S</p>
-    <p class="mt-2">tel./fax: <strong>{companyInfo.tel}</strong></p>
-    <p>{companyInfo.email}</p>
+<div class="text-center text-sm text-gray-700 space-y-1">
+  <p class="font-bold text-navy">AJUVA Š+S s.r.o.</p>
+  <p>Zvolenská cesta 20</p>
+  <p>974 01 Banská Bystrica</p>
+  <p class="mt-2">IČO: <strong>{companyInfo.ico}</strong></p>
+  <p>DIČ: <strong>{companyInfo.dic}</strong></p>
+  <p>IČ DPH: <strong>{companyInfo.icDph}</strong></p>
+  <p class="text-xs mt-1">Zápis OR OS Banská Bystrica odd. Sro, vložka č.10331/S</p>
+  <p class="mt-2">tel./fax: <strong>{companyInfo.tel}</strong></p>
+  <p>{companyInfo.email}</p>
+</div>
+
+<hr class="divider" />
+
+<!-- Contacts -->
+<h3 class="font-heading text-lg font-bold text-navy text-center mb-3">KONTAKTY</h3>
+<p class="text-xs text-center text-gray-500 mb-3">(zameranie na oblasti služieb, viď. KONTAKT)</p>
+
+{companyInfo.contacts.map((contact) => (
+  <div class="text-center text-sm mb-3">
+    <p class="font-bold text-navy">{contact.name}</p>
+    <p class="text-xs text-gray-600">{contact.email}</p>
+    <p class="text-xs text-gray-600">tel. č.: {contact.tel}</p>
   </div>
+))}
 
-  <hr class="divider-dots my-4" />
+<hr class="divider" />
 
-  <!-- Contacts -->
-  <h3 class="text-lg font-bold text-navy text-center mb-3" style="font-family: Georgia, 'Times New Roman', serif;">
-    KONTAKTY:
-  </h3>
-  <p class="text-xs text-center text-gray-500 mb-3">(zameranie na oblasti služieb, viď. KONTAKT)</p>
-
-  {companyInfo.contacts.map((contact) => (
-    <div class="text-center text-sm mb-3 p-2 bg-white/70 rounded border border-navy/20">
-      <p class="font-bold text-navy">{contact.name}</p>
-      <p class="text-xs">{contact.email}</p>
-      <p class="text-xs">tel. č.: {contact.tel}</p>
-    </div>
-  ))}
-
-  <hr class="divider-dots my-4" />
-
-  <!-- Building photo -->
-  <div class="flex justify-center">
-    <img
-      src="/images/image002.jpg"
-      alt="Budova AJUVA"
-      class="rounded border-2 border-navy shadow-md"
-      style="max-width: 283px;"
-      loading="lazy"
-    />
-  </div>
+<!-- Building photo -->
+<div class="flex justify-center">
+  <img
+    src="/images/image002.jpg"
+    alt="Budova AJUVA, Zvolenská cesta 20, Banská Bystrica"
+    class="rounded-lg border border-gray-200"
+    style="max-width: 283px;"
+    loading="lazy"
+  />
 </div>

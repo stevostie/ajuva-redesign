@@ -2,6 +2,7 @@ export interface MenuItem {
   label: string;
   href?: string;
   children?: MenuItem[];
+  isSectionHeader?: boolean;
 }
 
 export const mainMenu: MenuItem[] = [
@@ -34,30 +35,10 @@ export const mainMenu: MenuItem[] = [
     ]
   },
   {
-    label: 'BOZP, PO',
+    label: 'BOZP & PO',
     children: [
       { label: 'Ponuka BOZP', href: '/bozp-po/ponuka-bozp' },
       { label: 'Ponuka PO', href: '/bozp-po/ponuka-po' },
-    ]
-  },
-  {
-    label: 'PREDPISY',
-    children: [
-      { label: 'Bezpečnosť práce', href: '/predpisy/bezpecnost-prace' },
-      { label: 'Požiarna ochrana', href: '/predpisy/poziarna-ochrana' },
-      { label: 'VTZ tlak a plyn', href: '/predpisy/vtz-tlak-plyn' },
-      { label: 'Vykurovacie systémy', href: '/predpisy/vykurovacie-systemy' },
-      { label: 'Zdravotná služba', href: '/predpisy/zdravotna-sluzba' },
-      { label: 'STN, STN EN', href: '/predpisy/stn-stn-en' },
-      { label: 'Užitočné stránky', href: '/predpisy/uzitocne-stranky' },
-      { label: 'Články, stanoviská', href: '/predpisy/clanky-stanoviska' },
-    ]
-  },
-  {
-    label: 'KONTAKT',
-    children: [
-      { label: 'AJUVA Š+S s.r.o.', href: '/kontakt/ajuva' },
-      { label: 'Partneri', href: '/kontakt/partneri' },
     ]
   },
   {
@@ -70,26 +51,35 @@ export const mainMenu: MenuItem[] = [
     ]
   },
   {
-    label: 'TLAČIVÁ',
+    label: 'KONTAKT',
     children: [
+      { label: 'AJUVA Š+S s.r.o.', href: '/kontakt/ajuva' },
+      { label: 'Partneri', href: '/kontakt/partneri' },
+    ]
+  },
+  {
+    label: 'VIAC',
+    children: [
+      { label: 'PREDPISY', isSectionHeader: true },
+      { label: 'Bezpečnosť práce', href: '/predpisy/bezpecnost-prace' },
+      { label: 'Požiarna ochrana', href: '/predpisy/poziarna-ochrana' },
+      { label: 'VTZ tlak a plyn', href: '/predpisy/vtz-tlak-plyn' },
+      { label: 'Vykurovacie systémy', href: '/predpisy/vykurovacie-systemy' },
+      { label: 'Zdravotná služba', href: '/predpisy/zdravotna-sluzba' },
+      { label: 'STN, STN EN', href: '/predpisy/stn-stn-en' },
+      { label: 'Užitočné stránky', href: '/predpisy/uzitocne-stranky' },
+      { label: 'Články, stanoviská', href: '/predpisy/clanky-stanoviska' },
+      { label: 'TLAČIVÁ', isSectionHeader: true },
       { label: 'Tlačivá', href: '/tlaciva/tlaciva' },
       { label: 'Príručky a brožúry', href: '/tlaciva/prirucky-brozury' },
       { label: 'Otázky - FAQ´s', href: '/tlaciva/faq' },
       { label: 'Partneri', href: '/tlaciva/partneri-tlaciva' },
-    ]
-  },
-  {
-    label: 'ZÁBAVA',
-    children: [
+      { label: 'ZÁBAVA', isSectionHeader: true },
       { label: 'Vtipy', href: '/zabava/vtipy' },
       { label: 'Múdre výroky', href: '/zabava/mudre-vyroky' },
       { label: 'Murphyho zákony', href: '/zabava/murphyho-zakony' },
       { label: 'Video výuka', href: '/zabava/video-vyuka' },
-    ]
-  },
-  {
-    label: 'PONÚKAME',
-    children: [
+      { label: 'PONÚKAME', isSectionHeader: true },
       { label: 'Ponúkame', href: '/ponukame' },
     ]
   },

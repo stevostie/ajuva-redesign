@@ -4,31 +4,33 @@ import { companyInfo } from '../data/content';
 
 <footer class="bg-navy text-white mt-8">
   <!-- Bottom accent line -->
-  <div class="bg-accent h-0.5 w-full opacity-60"></div>
+  <div class="bg-cyan-400 h-0.5 w-full opacity-60"></div>
 
   <div class="max-w-5xl mx-auto px-4 py-6">
-    <!-- Footer link bar (matches original) -->
+    <!-- Secondary menu items (from VIAC dropdown) -->
+    <div class="text-center text-sm mb-3 flex flex-wrap justify-center gap-x-3 gap-y-1 opacity-70">
+      <a href="/predpisy/bezpecnost-prace" class="hover:text-cyan-200 transition-colors">Predpisy</a><span>·</span>
+      <a href="/tlaciva/tlaciva" class="hover:text-cyan-200 transition-colors">Tlačivá</a><span>·</span>
+      <a href="/zabava/vtipy" class="hover:text-cyan-200 transition-colors">Zábava</a><span>·</span>
+      <a href="/ponukame" class="hover:text-cyan-200 transition-colors">Ponúkame</a>
+    </div>
+
+    <!-- Main footer links -->
     <div class="footer-links text-center text-sm space-x-2 mb-4 flex flex-wrap justify-center gap-x-3 gap-y-1">
       <a href="/">DOMOV</a><span class="opacity-50">|</span>
       <a href="/skolenia/kuric-1-5-triedy">ŠKOLENIA</a><span class="opacity-50">|</span>
       <a href="/prehliadky/vtz-tlakove">PREHLIADKY</a><span class="opacity-50">|</span>
       <a href="/bozp-po/ponuka-bozp">BOZP, PO</a><span class="opacity-50">|</span>
-      <a href="/predpisy/bezpecnost-prace">PREDPISY</a><span class="opacity-50">|</span>
-      <a href="/kontakt/ajuva">KONTAKT</a><span class="opacity-50">|</span>
       <a href="/o-nas/profil">O NÁS</a><span class="opacity-50">|</span>
-      <a href="/tlaciva/tlaciva">TLAČIVÁ</a><span class="opacity-50">|</span>
-      <a href="/zabava/vtipy">ZÁBAVA</a><span class="opacity-50">|</span>
-      <a href="/ponukame">PONÚKAME</a>
+      <a href="/kontakt/ajuva">KONTAKT</a>
     </div>
 
-    <hr class="border-accent/30 mb-4" />
+    <hr class="border-cyan-400/20 mb-4" />
 
-    <div class="text-center text-xs text-cyan-200 space-y-1">
+    <div class="text-center text-xs text-cyan-200/70 space-y-1">
       <p>Aktualizované dňa: <strong>{companyInfo.lastUpdated}</strong></p>
       <p>&copy; {new Date().getFullYear()} AJUVA Š+S s.r.o. — Všetky práva vyhradené.</p>
-      <p class="opacity-60">
-        Zvolenská cesta 20, 974 01 Banská Bystrica | Tel: {companyInfo.tel} | {companyInfo.email}
-      </p>
+      <p>Zvolenská cesta 20, 974 01 Banská Bystrica | Tel: {companyInfo.tel} | {companyInfo.email}</p>
     </div>
   </div>
 </footer>
