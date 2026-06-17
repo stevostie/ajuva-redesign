@@ -27,19 +27,19 @@ export const services = [
 ];
 
 export const galleryImages = [
-  'gallery/Leck_5.jpg',
-  'gallery/LEG_1.jpg',
-  'gallery/Leck_4.jpg',
-  'gallery/Leck_7.jpg',
-  'gallery/DSCN1264.jpg',
-  'gallery/DSCN4265.jpg',
-  'gallery/exp_cp,tlak.jpg',
-  'gallery/DSCN4092.jpg',
-  'gallery/DSCN0203.jpg',
-  'gallery/dupl_414_02.jpg',
-  'gallery/DSCN7124.jpg',
-  'gallery/kom_5749.jpg',
-  'gallery/pz_BaP_4o9495l6.jpg',
+  { src: 'gallery/Leck_5.jpg', alt: 'Tlaková nádoba — praktická ukážka počas školenia', w: 265, h: 268 },
+  { src: 'gallery/LEG_1.jpg', alt: 'Plynové zariadenie — diagnostika a obsluha', w: 241, h: 268 },
+  { src: 'gallery/Leck_4.jpg', alt: 'Detail tlakového zariadenia s armatúrami', w: 358, h: 238 },
+  { src: 'gallery/Leck_7.jpg', alt: 'Kontrola tlakovej nádoby — praktické cvičenie', w: 358, h: 232 },
+  { src: 'gallery/DSCN1264.jpg', alt: 'Účastníci kurzu pri obsluhe kotla', w: 357, h: 268 },
+  { src: 'gallery/DSCN4265.jpg', alt: 'Školenie kuričov — teoretická časť v učebni', w: 357, h: 268 },
+  { src: 'gallery/exp_cp,tlak.jpg', alt: 'Expanzná nádoba a čerpadlo — montážna ukážka', w: 332, h: 249 },
+  { src: 'gallery/DSCN4092.jpg', alt: 'Praktický nácvik obsluhy vykurovacieho systému', w: 357, h: 268 },
+  { src: 'gallery/DSCN0203.jpg', alt: 'Kotolňa — prehliadka a odborný výklad', w: 357, h: 268 },
+  { src: 'gallery/dupl_414_02.jpg', alt: 'Technická dokumentácia — duplikáty a výkresy', w: 332, h: 249 },
+  { src: 'gallery/DSCN7124.jpg', alt: 'Meranie a regulácia — ukážka prístrojov', w: 357, h: 268 },
+  { src: 'gallery/kom_5749.jpg', alt: 'Kompresorová stanica — odborná prehliadka', w: 332, h: 249 },
+  { src: 'gallery/pz_BaP_4o9495l6.jpg', alt: 'Plynové zariadenie — bezpečnosť a prevádzka', w: 345, h: 259 },
 ];
 
 export const jokes = [
