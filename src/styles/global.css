@@ -59,7 +59,7 @@ body { font-family: var(--font-sans); background: white; color: var(--color-ink)
 .badge-teal { background: var(--color-teal-light); color: #0F766E; }
 
 /* ── Nav ── */
-.nav-desktop { background: var(--color-primary); position: sticky; top: 0; z-index: 50; }
+.nav-desktop { background: var(--color-primary); }
 .nav-item { color: rgba(255,255,255,0.78); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.01em; transition: all 0.15s; }
 .nav-item:hover { color: white; background: rgba(255,255,255,0.06); }
 .nav-active { color: white; background: rgba(255,255,255,0.1); }
