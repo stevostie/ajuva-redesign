@@ -26,7 +26,6 @@ const slug = Astro.params.slug;
 const slugPath = '/' + (slug || '');
 let pageTitle = '';
 
-// Flatten menu to find matching label
 function findLabel(items: typeof mainMenu, path: string): string {
   for (const item of items) {
     if (item.href === path) return item.label;
@@ -40,7 +39,6 @@ function findLabel(items: typeof mainMenu, path: string): string {
 
 pageTitle = findLabel(mainMenu, slugPath);
 
-// If not found, derive from last slug segment
 if (!pageTitle && slug) {
   const segments = slug.split('/');
   const lastSegment = segments[segments.length - 1] || '';
@@ -54,32 +52,27 @@ const title = pageTitle || 'Stránka';
 ---
 
 <MainLayout title={title}>
-  <div class="max-w-2xl mx-auto">
-    <div class="card-retro p-8 text-center">
-      <!-- Header with icon -->
-      <div class="text-4xl mb-4">📋</div>
-
-      <h1 class="text-2xl font-bold text-navy mb-4" style="font-family: Georgia, 'Times New Roman', serif;">
+  <div class="section max-w-2xl py-12">
+    <div class="card p-8 text-center">
+      <h1 class="text-2xl font-bold text-ink mb-4">
         {title}
       </h1>
 
-      <hr class="divider-dots mb-6" />
-
-      <div class="bg-info-retro rounded-lg p-6 border border-navy/20">
-        <p class="text-lg text-navy font-bold mb-2">
+      <div class="bg-surface rounded-card p-6 border border-line">
+        <p class="text-lg font-semibold text-ink mb-2">
           Obsah sa pripravuje
         </p>
-        <p class="text-sm text-gray-600">
+        <p class="text-sm text-muted">
           Táto sekcia bude čoskoro doplnená. Pre aktuálne informácie nás kontaktujte.
         </p>
       </div>
 
-      <!-- Quick links back -->
       <div class="mt-8 flex flex-wrap justify-center gap-3">
-        <a href="/" class="inline-block bg-navy text-white px-5 py-2 rounded text-sm font-bold hover:bg-navy-light transition-colors">
-          ← Späť na Domov
+        <a href="/" class="btn-secondary text-sm">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          Späť na Domov
         </a>
-        <a href="/kontakt/ajuva" class="inline-block bg-accent text-navy px-5 py-2 rounded text-sm font-bold hover:bg-accent-light transition-colors">
+        <a href="/kontakt/ajuva" class="btn-primary text-sm">
           Kontaktujte nás
         </a>
       </div>

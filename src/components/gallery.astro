@@ -2,7 +2,7 @@
 import { galleryImages } from '../data/content';
 ---
 
-<div class="card-retro overflow-hidden relative" style="width: 100%; max-width: 358px; height: 268px;">
+<div class="relative overflow-hidden rounded-card border border-line" style="width: 100%; max-width: 358px; height: 268px; background: var(--color-surface);">
   <div class="relative w-full h-full" id="gallery-container">
     {galleryImages.map((img, i) => (
       <img
@@ -18,9 +18,9 @@ import { galleryImages } from '../data/content';
   <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
     {galleryImages.map((_, i) => (
       <button
-        class="w-2.5 h-2.5 rounded-full border border-navy transition-colors"
+        class="w-2.5 h-2.5 rounded-full border border-brand transition-colors"
         data-index={i}
-        style={`background: ${i === 0 ? '#000066' : 'white'}`}
+        style={`background: ${i === 0 ? '#0A1E6E' : 'white'}`}
         aria-label={`Obrázok ${i + 1}`}
       ></button>
     ))}
@@ -29,14 +29,18 @@ import { galleryImages } from '../data/content';
   <!-- Prev/Next buttons -->
   <button
     id="gallery-prev"
-    class="absolute left-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-navy text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
+    class="absolute left-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-brand text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
     aria-label="Predošlý"
-  >◀</button>
+  >
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+  </button>
   <button
     id="gallery-next"
-    class="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-navy text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
+    class="absolute right-1 top-1/2 -translate-y-1/2 w-7 h-7 flex items-center justify-center bg-brand text-white rounded-full opacity-70 hover:opacity-100 transition-opacity z-10 text-xs"
     aria-label="Ďalší"
-  >▶</button>
+  >
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+  </button>
 </div>
 
 <script>
@@ -55,7 +59,7 @@ import { galleryImages } from '../data/content';
       if (dots) dots[current].style.background = 'white';
       current = ((index % total) + total) % total;
       slides[current].classList.add('active');
-      if (dots) dots[current].style.background = '#000066';
+      if (dots) dots[current].style.background = '#0A1E6E';
     }
 
     function nextSlide() { goTo(current + 1); }

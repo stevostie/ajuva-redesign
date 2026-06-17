@@ -4,19 +4,22 @@ import { mainMenu } from '../data/menu';
 const currentPath = Astro.url?.pathname || '/';
 ---
 
-<!-- Mobile toggle button -->
+<!-- Mobile toggle -->
 <button
   id="mobile-menu-toggle"
-  class="nav-mobile-toggle w-full bg-navy text-white px-4 py-3 text-left font-bold flex items-center justify-between"
+  class="nav-mobile-toggle w-full bg-brand text-white px-4 py-3 text-left font-semibold flex items-center justify-between"
   aria-label="Menu"
 >
-  <span>☰ MENU</span>
-  <span id="mobile-arrow" class="transition-transform duration-300">▼</span>
+  <span class="flex items-center gap-2">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    MENU
+  </span>
+  <svg id="mobile-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
 </button>
 
-<!-- Desktop Navigation — clean modern -->
-<nav class="nav-desktop text-white shadow-md relative z-40 border-b border-white/10">
-  <div class="max-w-5xl mx-auto">
+<!-- Desktop Navigation -->
+<nav class="nav-desktop text-white relative z-40">
+  <div class="max-w-6xl mx-auto">
     <ul class="flex flex-wrap justify-center">
       {mainMenu.map((item) => (
         <li class="relative group">
@@ -32,37 +35,36 @@ const currentPath = Astro.url?.pathname || '/';
               class={`nav-item block px-4 py-3 text-[13px] font-semibold whitespace-nowrap tracking-wide cursor-pointer ${item.children?.some(c => c.href && currentPath === c.href) ? 'nav-active' : ''}`}
             >
               {item.label}
-              <span class="ml-1 text-[10px] opacity-60">▾</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="inline-block ml-1 opacity-50" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </span>
           )}
           {item.children && item.children.length > 0 && (
-            <ul class="absolute left-1/2 -translate-x-1/2 top-full pt-1 min-w-[220px]
+            <ul class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-0 min-w-[220px]
                        opacity-0 invisible group-hover:opacity-100 group-hover:visible
                        transition-all duration-200 z-50
-                       bg-navy-900
-                       rounded-lg border border-white/15
-                       shadow-2xl shadow-black/50
                        translate-y-1 group-hover:translate-y-0">
-              {item.children.map((child, idx) => (
-                child.isSectionHeader ? (
-                  <li class="px-5 pt-3 pb-1 text-[11px] font-bold text-cyan-300/60 uppercase tracking-wider">
-                    {child.label}
-                  </li>
-                ) : (
-                  <li class={idx === 0 || item.children[idx - 1]?.isSectionHeader ? 'mt-0' : ''}>
-                    <a
-                      href={child.href}
-                      class={`block px-5 py-2 text-sm whitespace-nowrap transition-colors duration-150
-                        ${currentPath === child.href
-                          ? 'bg-white/10 text-orange-400 font-semibold'
-                          : 'hover:bg-white/10 hover:text-cyan-200'
-                        }`}
-                    >
+              <div class="py-2">
+                {item.children.map((child, idx) => (
+                  child.isSectionHeader ? (
+                    <li class="px-5 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">
                       {child.label}
-                    </a>
-                  </li>
-                )
-              ))}
+                    </li>
+                  ) : (
+                    <li class={idx === 0 || item.children[idx - 1]?.isSectionHeader ? 'mt-0' : ''}>
+                      <a
+                        href={child.href}
+                        class={`block px-5 py-2 text-[13px] font-semibold whitespace-nowrap transition-colors duration-150
+                          ${currentPath === child.href
+                            ? 'bg-brand/5 text-brand'
+                            : 'text-brand hover:bg-surface'
+                          }`}
+                      >
+                        {child.label}
+                      </a>
+                    </li>
+                  )
+                ))}
+              </div>
             </ul>
           )}
         </li>
@@ -71,28 +73,28 @@ const currentPath = Astro.url?.pathname || '/';
   </div>
 </nav>
 
-<!-- Mobile menu (hidden by default) -->
-<div id="mobile-menu" class="nav-mobile-menu bg-navy text-white hidden">
+<!-- Mobile menu -->
+<div id="mobile-menu" class="nav-mobile-menu bg-brand text-white hidden">
   <ul class="divide-y divide-white/10">
     {mainMenu.map((item) => (
       <li>
         {item.href ? (
-          <a href={item.href} class="block px-4 py-3 text-sm font-semibold hover:bg-white/10 hover:text-cyan-200 transition-colors">
+          <a href={item.href} class="block px-4 py-3 text-sm font-semibold hover:bg-white/10 transition-colors">
             {item.label}
           </a>
         ) : (
           <details class="group/mob">
-            <summary class="block px-4 py-3 text-sm font-semibold cursor-pointer hover:bg-white/10 hover:text-cyan-200 list-none flex justify-between items-center">
+            <summary class="block px-4 py-3 text-sm font-semibold cursor-pointer hover:bg-white/10 list-none flex justify-between items-center">
               {item.label}
-              <span class="text-[10px] opacity-50 group-open/mob:rotate-180 transition-transform">▾</span>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-open/mob:rotate-180 transition-transform" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
             </summary>
-            <ul class="bg-[#000033]/60">
+            <ul class="bg-[#060E3A]/80">
               {item.children?.map((child) => (
                 child.isSectionHeader ? (
-                  <li class="px-8 pt-3 pb-1 text-[11px] font-bold text-cyan-300/50 uppercase">{child.label}</li>
+                  <li class="px-8 pt-3 pb-1 text-[11px] font-semibold text-white/40 uppercase tracking-wider">{child.label}</li>
                 ) : (
                   <li>
-                    <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-white/10 hover:text-cyan-200 transition-colors">
+                    <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-white/10 transition-colors">
                       {child.label}
                     </a>
                   </li>
