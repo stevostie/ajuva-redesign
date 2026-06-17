@@ -7,79 +7,80 @@ import Jokes from '../components/Jokes.astro';
 ---
 
 <MainLayout>
-  <!-- ═══ HERO — bold, layered, experimental ═══ -->
-  <section class="relative bg-brand overflow-hidden min-h-[88vh] flex items-center">
-    <div class="absolute inset-0 opacity-[0.04]" style="background:radial-gradient(circle at 20% 80%, white 1px, transparent 1px);background-size:60px 60px;"></div>
-    <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-3xl"></div>
-    <div class="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-brand-500/20 blur-3xl"></div>
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="relative bg-primary overflow-hidden min-h-[90vh] flex items-center">
+    <!-- Background graphics -->
+    <svg class="absolute top-0 right-0 w-[800px] h-[800px] opacity-[0.03] text-white" viewBox="0 0 800 800" fill="none" aria-hidden="true">
+      <circle cx="400" cy="400" r="380" stroke="currentColor" stroke-width="2"/>
+      <circle cx="400" cy="400" r="280" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="400" cy="400" r="180" stroke="currentColor" stroke-width="1"/>
+      <circle cx="400" cy="400" r="80" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="0" y1="400" x2="800" y2="400" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="400" y1="0" x2="400" y2="800" stroke="currentColor" stroke-width="0.5"/>
+    </svg>
+    <div class="absolute top-[-30%] left-[-10%] w-[500px] h-[500px] rounded-full bg-accent/8 blur-3xl"></div>
+    <div class="absolute bottom-[-20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-amber/8 blur-3xl"></div>
 
     <div class="relative w-full max-w-7xl mx-auto px-4 py-20 md:py-0">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <!-- LEFT: big text + stats -->
+        <!-- LEFT -->
         <div class="space-y-8">
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            <span class="text-white/80 text-xs font-medium">Prihlasovanie otvorené</span>
+          <!-- Big logo -->
+          <div class="flex items-center gap-4">
+            <img src="/images/ajuva.png" alt="AJUVA" class="h-16 md:h-20 w-auto drop-shadow-2xl" />
+            <div>
+              <div class="text-white/40 text-xs font-bold uppercase tracking-[0.2em]">AJUVA Š+S s.r.o.</div>
+              <div class="text-white text-2xl font-black tracking-tight">Banská Bystrica</div>
+            </div>
           </div>
 
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.95] tracking-tight">
-            Školenia<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-red-400 to-accent">pre profesionálov</span>
+          <h1 class="text-5xl md:text-7xl font-black text-white leading-[0.92] tracking-tight">
+            Odborné<br/>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-light to-amber">školenia a revízie</span>
           </h1>
 
-          <p class="text-white/45 text-lg max-w-md leading-relaxed">
-            20 rokov skúseností. 3 000+ absolventov. Jeden cieľ — vaša bezpečnosť a odbornosť.
+          <p class="text-white/40 text-lg max-w-md leading-relaxed">
+            Boiler operators · Pressure equipment · Gas systems · Occupational safety
           </p>
 
           <div class="flex flex-wrap gap-3">
-            <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !py-3.5 !px-7 !text-base !rounded-xl">
+            <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !py-4 !px-8 !text-base !rounded-xl">
               Aktuálne termíny <span class="text-lg">→</span>
             </a>
-            <a href="/kontakt/ajuva" class="btn btn-outline-light !py-3.5 !px-7 !text-base !rounded-xl">
+            <a href="/kontakt/ajuva" class="btn btn-ghost-light !py-4 !px-8 !text-base !rounded-xl">
               Kontakt
             </a>
           </div>
 
-          <!-- Big stat numbers -->
-          <div class="flex gap-12 pt-8 border-t border-white/[0.08]">
-            <div>
-              <div class="text-5xl font-black text-white">20+</div>
-              <div class="text-white/35 text-sm mt-1">rokov</div>
-            </div>
-            <div>
-              <div class="text-5xl font-black text-white">3k+</div>
-              <div class="text-white/35 text-sm mt-1">absolventov</div>
-            </div>
-            <div>
-              <div class="text-5xl font-black text-white">10</div>
-              <div class="text-white/35 text-sm mt-1">služieb</div>
-            </div>
+          <div class="flex gap-10 pt-10 border-t border-white/[0.06]">
+            <div><div class="text-5xl font-black text-white">20+</div><div class="text-white/30 text-sm mt-1">rokov</div></div>
+            <div><div class="text-5xl font-black text-white">3k+</div><div class="text-white/30 text-sm mt-1">absolventov</div></div>
+            <div><div class="text-5xl font-black text-white">10</div><div class="text-white/30 text-sm mt-1">služieb</div></div>
           </div>
         </div>
 
-        <!-- RIGHT: glass card -->
+        <!-- RIGHT: Glass date card + industrial icon -->
         <div class="relative hidden md:block">
-          <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-accent/20 blur-2xl"></div>
-          <div class="relative bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] rounded-3xl p-8 space-y-6">
-            <!-- Date card -->
-            <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="badge badge-red text-xs px-3 py-1">Najbližšie</span>
-                <span class="text-white/25 text-xs">2026</span>
-              </div>
-              <div class="text-6xl font-black text-white tracking-tighter mb-2">21.–22.</div>
-              <div class="text-white/30 text-lg">január</div>
+          <!-- Industrial gear SVG decoration -->
+          <div class="absolute -top-20 -right-20 text-accent/15" aria-hidden="true">
+            <svg width="200" height="200" viewBox="0 0 200 200" fill="currentColor"><path d="M100 10c-5 0-10 2-13 5l-3 5-6-2c-4-2-10-1-13 2l-7 7c-3 3-4 8-2 13v7l-6 2c-5 1-8 6-7 11l2 10-4 5c-3 4-3 9 0 13l5 6-3 6c-2 4-1 10 3 13l7 6-1 6c-1 5 3 10 8 11l10 2 1 7c1 5 6 8 11 7l10-3 4 5c3 4 9 5 13 2l8-6 6 2c4 2 10 0 13-3l6-8 6 2c5 1 10-3 11-8l2-9 6-3c4-3 5-9 2-13l-5-7 4-6c3-4 2-10-2-13l-8-5 3-6c2-5-1-10-6-12l-9-3-1-7c-1-5-6-8-11-7l-9 3-5-5c-4-3-9-2-13 1l-6 7-6-3c-5-2-10 0-12 5l-3 9-8 1z"/></svg>
+          </div>
+
+          <div class="relative bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-8 space-y-6">
+            <div class="flex items-center justify-between">
+              <span class="badge badge-accent text-xs px-3 py-1">Najbližšie</span>
+              <span class="text-white/20 text-xs font-mono">2026</span>
             </div>
+            <div class="text-7xl font-black text-white tracking-tighter leading-none">21.–22.</div>
+            <div class="text-white/25 text-xl -mt-2">január</div>
             <hr class="border-white/[0.06]" />
-            <div>
-              <p class="text-white/80 font-bold mb-3">Kurič I. – V. triedy</p>
-              <div class="space-y-2 text-white/40 text-sm">
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Odborná príprava</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Certifikát o absolvovaní</div>
-                <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Platnosť po celom SK</div>
-              </div>
+            <p class="text-white/80 font-bold text-lg">Kurič I. – V. triedy</p>
+            <div class="space-y-2.5 text-white/35 text-sm">
+              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Odborná príprava</div>
+              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber"></span> Certifikát</div>
+              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal"></span> Celoslovenská platnosť</div>
             </div>
-            <a href="/skolenia/kuric-1-5-triedy" class="flex items-center justify-between bg-white/10 hover:bg-white/15 rounded-2xl px-5 py-4 text-white font-semibold transition-colors">
+            <a href="/skolenia/kuric-1-5-triedy" class="flex items-center justify-between bg-white/[0.06] hover:bg-white/[0.12] rounded-2xl px-5 py-4 text-white font-bold transition-all">
               Detail a prihláška <span class="text-lg">→</span>
             </a>
           </div>
@@ -88,44 +89,38 @@ import Jokes from '../components/Jokes.astro';
     </div>
   </section>
 
-  <!-- ═══ TERMÍNY — overlapping cards ═══ -->
-  <section class="relative -mt-20 pb-0 z-10">
+  <!-- ═══════════════ TERMÍNY ═══════════════ -->
+  <section class="relative -mt-24 pb-0 z-10">
     <div class="max-w-5xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-5">
-        <div class="card p-7 bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300" style="box-shadow:0 25px 50px -12px rgba(0,0,0,0.12);">
-          <div class="flex items-start gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <div class="card p-7 bg-white md:p-8">
+          <div class="flex items-start gap-5">
+            <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center flex-shrink-0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
             <div class="flex-1 min-w-0">
-              <span class="badge badge-red text-[11px]">Školenie</span>
+              <span class="badge badge-accent text-[11px] mb-2">Školenie</span>
               <h3 class="text-xl font-extrabold text-ink mt-2 leading-tight">Kurič I. – V. triedy</h3>
               <p class="text-ink-500 text-sm mt-2.5 leading-relaxed">Kompletná odborná príprava obslúh VTZ — teória aj prax. Certifikovaný kurz s celoslovenskou platnosťou.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-line">
-                <div class="flex items-center gap-3">
-                  <div class="text-2xl font-black text-brand tracking-tight">21.–22.01.</div>
-                  <span class="text-ink-300 text-xs">2026</span>
-                </div>
-                <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !text-sm !py-2.5 !px-5 !rounded-xl">Detail</a>
+              <div class="flex items-center justify-between mt-6 pt-5 border-t border-line">
+                <div class="flex items-baseline gap-2"><span class="text-3xl font-black text-ink tracking-tight">21.–22.01.</span><span class="text-ink-300 text-sm">2026</span></div>
+                <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !text-sm !py-2.5 !px-5">Detail</a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="card p-7 bg-white shadow-xl hover:shadow-2xl transition-shadow duration-300" style="box-shadow:0 25px 50px -12px rgba(0,0,0,0.12);">
-          <div class="flex items-start gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-brand/10 flex items-center justify-center flex-shrink-0">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <div class="card p-7 bg-white md:p-8">
+          <div class="flex items-start gap-5">
+            <div class="w-16 h-16 rounded-2xl bg-amber-light flex items-center justify-center flex-shrink-0">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
             </div>
             <div class="flex-1 min-w-0">
-              <span class="badge badge-brand text-[11px]">Školenie</span>
+              <span class="badge badge-amber text-[11px] mb-2">Školenie</span>
               <h3 class="text-xl font-extrabold text-ink mt-2 leading-tight">Revízni technici VTZ</h3>
-              <p class="text-ink-500 text-sm mt-2.5 leading-relaxed">Aktualizačná odborná príprava revíznych technikov a opráv VTZ tlakových a plynových — priebežne.</p>
-              <div class="flex items-center justify-between mt-5 pt-4 border-t border-line">
-                <div class="flex items-center gap-3">
-                  <div class="text-2xl font-black text-brand tracking-tight">Priebežne</div>
-                </div>
-                <a href="/skolenia/kuric-1-5-triedy" class="btn btn-outline-brand !text-sm !py-2.5 !px-5 !rounded-xl">Termíny</a>
+              <p class="text-ink-500 text-sm mt-2.5 leading-relaxed">Aktualizačná príprava revíznych technikov a opráv VTZ tlakových a plynových — priebežne podľa záujmu.</p>
+              <div class="flex items-center justify-between mt-6 pt-5 border-t border-line">
+                <div class="flex items-baseline gap-2"><span class="text-3xl font-black text-ink tracking-tight">Priebežne</span></div>
+                <a href="/skolenia/kuric-1-5-triedy" class="btn btn-outline !text-sm !py-2.5 !px-5">Termíny</a>
               </div>
             </div>
           </div>
@@ -134,62 +129,65 @@ import Jokes from '../components/Jokes.astro';
     </div>
   </section>
 
-  <!-- ═══ SLUŽBY — experimental grid ═══ -->
-  <section class="section mt-16">
+  <!-- ═══════════════ SLUŽBY ═══════════════ -->
+  <section class="section mt-20">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
         <div>
-          <p class="text-accent text-xs font-bold uppercase tracking-[0.15em] mb-3">Čo ponúkame</p>
-          <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight leading-[1.05]">
-            Komplexné<br/>služby
-          </h2>
+          <p class="section-label">Čo ponúkame</p>
+          <h2 class="text-4xl md:text-6xl font-black text-ink tracking-tight leading-[0.95]">Komplexné<br/>služby</h2>
         </div>
-        <p class="text-ink-500 max-w-sm text-sm">Od odborných prehliadok cez certifikované školenia až po spracovanie kompletnej dokumentácie BOZP a PO.</p>
+        <div class="flex gap-3">
+          <!-- Industrial icons -->
+          <div class="w-12 h-12 rounded-2xl bg-accent-50 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="w-12 h-12 rounded-2xl bg-amber-light flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+          <div class="w-12 h-12 rounded-2xl bg-teal-light flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        </div>
       </div>
       <ServiceList />
     </div>
   </section>
 
-  <!-- ═══ GALÉRIA + INFO + MENINY ═══ -->
+  <!-- ═══════════════ GALÉRIA + SIDEBAR ═══════════════ -->
   <section class="section bg-surface">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="grid md:grid-cols-12 gap-8">
-        <!-- Gallery spans 7 -->
+      <div class="grid md:grid-cols-12 gap-10">
         <div class="md:col-span-7">
-          <p class="text-accent text-xs font-bold uppercase tracking-[0.15em] mb-3">Galéria</p>
-          <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight leading-[1.05] mb-8">Z našich školení</h2>
+          <p class="section-label">Galéria</p>
+          <h2 class="text-4xl md:text-6xl font-black text-ink tracking-tight leading-[0.95] mb-8">Z našich<br/>školení</h2>
           <Gallery />
         </div>
-        <!-- Sidebar spans 5 -->
         <div class="md:col-span-5 space-y-6">
           <!-- Info -->
           <div class="card-static bg-white p-6">
-            <div class="flex items-center gap-2 mb-4">
-              <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-accent-50 flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
               </div>
-              <span class="text-xs font-bold uppercase tracking-wider text-ink-500">Aktuálne info</span>
+              <span class="text-xs font-extrabold uppercase tracking-[0.12em] text-ink-500">Aktuálne</span>
             </div>
             <div class="text-sm text-ink-700 space-y-3 leading-relaxed">
-              <p>V časti <a href="/skolenia/kuric-1-5-triedy" class="font-bold text-brand hover:underline">Školenia</a> nájdete termíny odbornej prípravy obslúh VTZ.</p>
-              <p class="font-extrabold text-accent">Termín: 21.–22.01.2026</p>
+              <p><a href="/skolenia/kuric-1-5-triedy" class="font-extrabold text-accent hover:underline">Školenia</a> — termíny odbornej prípravy obslúh VTZ.</p>
+              <p class="font-extrabold text-ink">Najbližší termín: 21.–22.01.2026</p>
               <hr class="border-line" />
-              <p>Termíny pre revíznych technikov a opravy VTZ v časti <a href="/skolenia/kuric-1-5-triedy" class="font-bold text-brand hover:underline">Školenia</a>.</p>
-              <div class="bg-accent-50 border border-accent/15 rounded-xl p-4 mt-3">
-                <p class="font-extrabold text-accent text-xs uppercase tracking-wider mb-1">Legislatíva</p>
-                <p class="text-xs text-ink-700 leading-relaxed">Od 01.01.2023 novela zákona č.124/2006 Z.z. a vyhlášky č.356/2007 Z.z.</p>
+              <p>Revízni technici a opravy VTZ — <a href="/skolenia/kuric-1-5-triedy" class="font-extrabold text-accent hover:underline">aktuálne termíny</a>.</p>
+              <div class="bg-accent-50 border border-accent/15 rounded-xl p-4">
+                <p class="font-extrabold text-accent text-xs uppercase tracking-[0.1em] mb-1">Legislatíva</p>
+                <p class="text-xs text-ink-700">Novela zákona č.124/2006 Z.z. a vyhlášky č.356/2007 Z.z. (vyhl. č.66/2023).</p>
               </div>
             </div>
           </div>
 
           <!-- Meniny -->
-          <div class="relative overflow-hidden rounded-2xl bg-brand p-6 text-white text-center" style="background:linear-gradient(145deg, #0A1E6E 0%, #1E3FA8 60%, #2A46B8 100%);">
-            <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-white/[0.04]"></div>
+          <div class="relative overflow-hidden rounded-2xl p-6 text-white text-center" style="background:linear-gradient(145deg, #18181B 0%, #27272A 100%);">
+            <div class="absolute top-0 right-0 w-24 h-24">
+              <svg viewBox="0 0 100 100" class="text-white/[0.03]" fill="currentColor" aria-hidden="true"><circle cx="100" cy="0" r="100"/></svg>
+            </div>
             <div class="relative">
-              <p class="text-white/40 text-[11px] font-bold uppercase tracking-[0.2em] mb-3">Meniny</p>
+              <p class="text-white/30 text-[11px] font-extrabold uppercase tracking-[0.2em] mb-3">Meniny</p>
               <div id="name-day" class="text-4xl font-black tracking-tight">—</div>
-              <div class="w-8 h-0.5 bg-white/20 mx-auto my-4"></div>
-              <div id="daily-quote" class="text-white/40 text-xs italic leading-relaxed max-w-[220px] mx-auto"></div>
+              <div class="w-8 h-0.5 bg-white/15 mx-auto my-4"></div>
+              <div id="daily-quote" class="text-white/35 text-xs italic leading-relaxed max-w-[220px] mx-auto"></div>
             </div>
           </div>
         </div>
@@ -197,7 +195,7 @@ import Jokes from '../components/Jokes.astro';
     </div>
   </section>
 
-  <!-- ═══ KONTAKT + MAPA ═══ -->
+  <!-- ═══════════════ KONTAKT ═══════════════ -->
   <section class="section">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-2 gap-8">
@@ -206,51 +204,52 @@ import Jokes from '../components/Jokes.astro';
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2633.304570123456!2d19.1345!3d48.7395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471516c5a1b0e5f7%3A0x4a2b1c3d4e5f6789!2sZvolensk%C3%A1%20cesta%2020%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1699999999999" width="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa AJUVA" class="flex-1"></iframe>
           <div class="px-6 py-4 flex items-center justify-between bg-surface border-t border-line">
             <p class="font-extrabold text-ink text-sm">Zvolenská cesta 20, B. Bystrica</p>
-            <a href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica" target="_blank" rel="noopener" class="text-accent font-bold text-sm hover:underline">Navigovať →</a>
+            <a href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica" target="_blank" rel="noopener" class="text-accent font-extrabold text-sm hover:underline">Navigovať →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ ZÁBAVA ═══ -->
+  <!-- ═══════════════ ZÁBAVA ═══════════════ -->
   <section class="section bg-surface">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-3 gap-8">
         <div class="md:col-span-2">
-          <p class="text-accent text-xs font-bold uppercase tracking-[0.15em] mb-3">Zábava</p>
-          <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight leading-[1.05] mb-8">
-            <a href="/zabava/vtipy" class="hover:text-accent transition-colors">Vtipy</a>
-          </h2>
+          <p class="section-label">Oddych</p>
+          <h2 class="text-4xl md:text-6xl font-black text-ink tracking-tight leading-[0.95] mb-8"><a href="/zabava/vtipy" class="hover:text-accent transition-colors">Vtipy</a></h2>
           <div class="card-static p-6 bg-white"><Jokes /></div>
         </div>
         <div class="card-static p-8 text-center bg-white flex flex-col items-center justify-center gap-4">
-          <div class="w-16 h-16 rounded-2xl bg-brand/5 flex items-center justify-center">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+          <div class="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
           </div>
           <h3 class="font-extrabold text-xl text-ink">Ďakujeme</h3>
-          <p class="text-ink-500 text-sm">za dôveru a návštevu.</p>
-          <a href="mailto:ajuva@ajuva.sk" class="text-brand font-bold text-sm hover:underline">ajuva@ajuva.sk</a>
+          <p class="text-ink-500 text-sm">za dôveru</p>
+          <a href="mailto:ajuva@ajuva.sk" class="text-accent font-extrabold text-sm hover:underline">ajuva@ajuva.sk</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ CTA BANNER ═══ -->
-  <section class="relative bg-brand overflow-hidden py-20 md:py-28">
-    <div class="absolute top-[-30%] left-[10%] w-96 h-96 rounded-full bg-accent/10 blur-3xl"></div>
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="relative bg-primary overflow-hidden py-20 md:py-28">
+    <!-- Flame SVG graphic -->
+    <div class="absolute right-[5%] top-1/2 -translate-y-1/2 opacity-[0.04] text-white" aria-hidden="true">
+      <svg width="300" height="400" viewBox="0 0 300 400" fill="currentColor"><path d="M150 400c60-80 100-160 100-230 0-50-15-90-30-110-15 20-30 60-30 110 0 70 40 150-40 230zm0 0c-60-80-100-160-100-230 0-50 15-90 30-110 15 20 30 60 30 110 0 70-40 150 40 230z"/></svg>
+    </div>
     <div class="relative max-w-2xl mx-auto text-center px-4">
-      <h2 class="text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.05]">Máte záujem o spoluprácu?</h2>
-      <p class="text-white/40 text-lg mt-5">Nezáväzná konzultácia, individuálna cenová ponuka, flexibilné termíny.</p>
+      <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-[0.95]">Máte záujem o spoluprácu?</h2>
+      <p class="text-white/30 text-lg mt-5">Kontaktujte nás — nezáväzná konzultácia, flexibilné termíny, férové ceny.</p>
       <div class="mt-8">
-        <a href="/kontakt/ajuva" class="btn !bg-white !text-brand !py-4 !px-8 !text-base !rounded-xl font-extrabold hover:!bg-white/90 transition-all hover:scale-105">
+        <a href="/kontakt/ajuva" class="btn !bg-white !text-primary !py-4 !px-10 !text-base !rounded-xl font-extrabold hover:!bg-white/90 hover:scale-105 transition-transform">
           Kontaktujte nás <span class="text-xl">→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <div class="bg-surface text-center py-3 text-xs text-ink-300 font-medium tracking-wide">Aktualizované: 29. 12. 2025</div>
+  <div class="bg-surface text-center py-3 text-xs text-ink-300 font-medium">Aktualizované: 29.12.2025</div>
 
   <script>
     const nd={'1.1.':'Courtney','2.1.':'Alexandra','3.1.':'Daniela','4.1.':'Drahoslav','5.1.':'Andrea','6.1.':'Antónia','7.1.':'Bohuslava','8.1.':'Severín','9.1.':'Alex','10.1.':'Dáša','11.1.':'Malvína','12.1.':'Ernest','13.1.':'Rastislav','14.1.':'Radovan','15.1.':'Dobroslav','16.1.':'Kristína','17.1.':'Nataša','18.1.':'Bohdana','19.1.':'Mário','20.1.':'Dalibor','21.1.':'Vincent','22.1.':'Zora','23.1.':'Miloš','24.1.':'Timotej','25.1.':'Gejza','26.1.':'Tamara','27.1.':'Bohuš','28.1.':'Alfonz','29.1.':'Gašpar','30.1.':'Ema','31.1.':'Emil','1.2.':'Tatiana','2.2.':'Erik','3.2.':'Blažej','4.2.':'Veronika','5.2.':'Agáta','6.2.':'Dorota','7.2.':'Vanda','8.2.':'Zoja','9.2.':'Zdenko','10.2.':'Gabriela','11.2.':'Dezider','12.2.':'Perla','13.2.':'Arpád','14.2.':'Valentín','15.2.':'Pravoslav','16.2.':'Ida','17.2.':'Miloslava','1.3.':'Albín','2.3.':'Anežka','3.3.':'Bohumil','4.3.':'Kazimír','5.3.':'Fridrich','6.3.':'Radoslav','7.3.':'Tomáš','8.3.':'Alan','9.3.':'Františka','10.3.':'Branislav','11.3.':'Angelina','12.3.':'Gregor','13.3.':'Vlastimil','14.3.':'Matilda','15.3.':'Svetlana','16.3.':'Boleslav','17.3.':'Ľubica','18.3.':'Eduard','19.3.':'Jozef','20.3.':'Víťazoslav','21.3.':'Blahoslav','22.3.':'Beňadik','23.3.':'Adrián','24.3.':'Gabriel','25.3.':'Marián','26.3.':'Emanuel','27.3.':'Alena','28.3.':'Soňa','29.3.':'Miroslav','30.3.':'Vieroslava','31.3.':'Benjamín','1.4.':'Hugo','2.4.':'Zita','3.4.':'Richard','4.4.':'Izidor','5.4.':'Miroslava','6.4.':'Irena','7.4.':'Zoltán','8.4.':'Albert','9.4.':'Milena','10.4.':'Igor','11.4.':'Július','12.4.':'Estera','13.4.':'Aleš','14.4.':'Justin','15.4.':'Fedor','16.4.':'Dana','17.4.':'Rudolf','18.4.':'Valér','19.4.':'Jela','20.4.':'Marcel','21.4.':'Ervín','22.4.':'Slavomír','23.4.':'Vojtech','24.4.':'Juraj','25.4.':'Marek','26.4.':'Jaroslava','27.4.':'Jaroslav','28.4.':'Jarmila','29.4.':'Simona','30.4.':'Anastázia','1.5.':'Amarila','2.5.':'Žigmund','3.5.':'Galina','4.5.':'Florián','5.5.':'Lesana','6.5.':'Hermína','7.5.':'Monika','8.5.':'Ingrida','9.5.':'Roland','10.5.':'Viktória','11.5.':'Blažena','12.5.':'Pankrác','13.5.':'Servác','14.5.':'Bonifác','15.5.':'Žofia','16.5.':'Svetozár','17.5.':'Gizela','18.5.':'Viola','19.5.':'Gertrúda','20.5.':'Bernard','21.5.':'Zina','22.5.':'Júlia','23.5.':'Želmíra','24.5.':'Ela','25.5.':'Urban','26.5.':'Dušan','27.5.':'Iveta','28.5.':'Viliam','29.5.':'Vilma','30.5.':'Ferdinand','31.5.':'Petrana','1.6.':'Žaneta','2.6.':'Xénia','3.6.':'Karolína','4.6.':'Lenka','5.6.':'Laura','6.6.':'Norbert','7.6.':'Róbert','8.6.':'Medard','9.6.':'Stanislava','10.6.':'Margaréta','11.6.':'Dobroslava','12.6.':'Zlatko','13.6.':'Anton','14.6.':'Vasil','15.6.':'Vít','16.6.':'Bianka','17.6.':'Adolf','18.6.':'Vratislav','19.6.':'Alfréd','20.6.':'Valéria','21.6.':'Alojz','22.6.':'Paulína','23.6.':'Sidónia','24.6.':'Ján','25.6.':'Olívia','26.6.':'Adriána','27.6.':'Ladislav','28.6.':'Beáta','29.6.':'Peter','30.6.':'Melánia','1.7.':'Diana','2.7.':'Berta','3.7.':'Miroslav','4.7.':'Prokop','5.7.':'Cyril','6.7.':'Patrik','7.7.':'Oliver','8.7.':'Ivan','9.7.':'Lujza','10.7.':'Amália','11.7.':'Milota','12.7.':'Nina','13.7.':'Margita','14.7.':'Kamil','15.7.':'Henrich','16.7.':'Drahomír','17.7.':'Bohuslav','18.7.':'Kamila','19.7.':'Dušana','20.7.':'Eliáš','21.7.':'Daniel','22.7.':'Magdaléna','23.7.':'Oľga','24.7.':'Vladimír','25.7.':'Jakub','26.7.':'Anna','27.7.':'Božena','28.7.':'Krištof','29.7.':'Marta','30.7.':'Libuša','31.7.':'Ignác','1.8.':'Božidara','2.8.':'Gustáv','3.8.':'Jerguš','4.8.':'Dominik','5.8.':'Hortenzia','6.8.':'Jozefína','7.8.':'Štefánia','8.8.':'Oskár','9.8.':'Ľubomíra','10.8.':'Vavrinec','11.8.':'Zuzana','12.8.':'Darina','13.8.':'Ľubomír','14.8.':'Mojmír','15.8.':'Marcela','16.8.':'Leonard','17.8.':'Milica','18.8.':'Elena','19.8.':'Lýdia','20.8.':'Anabela','21.8.':'Jana','22.8.':'Tichomír','23.8.':'Filip','24.8.':'Bartolomej','25.8.':'Ľudovít','26.8.':'Samuel','27.8.':'Silvia','28.8.':'Augustín','29.8.':'Nikola','30.8.':'Ružena','31.8.':'Nora','1.9.':'Drahoslava','2.9.':'Linda','3.9.':'Belo','4.9.':'Rozália','5.9.':'Regína','6.9.':'Alica','7.9.':'Marianna','8.9.':'Miriama','9.9.':'Martina','10.9.':'Oleg','11.9.':'Bystrík','12.9.':'Mária','13.9.':'Ctibor','14.9.':'Ľudomil','15.9.':'Jolana','16.9.':'Ľudmila','17.9.':'Olympia','18.9.':'Eugénia','19.9.':'Konštantín','20.9.':'Ľuboslav','21.9.':'Matúš','22.9.':'Móric','23.9.':'Zdenka','24.9.':'Ľuboš','25.9.':'Vladislav','26.9.':'Edita','27.9.':'Cyprián','28.9.':'Václav','29.9.':'Michal','30.9.':'Jarolím','1.10.':'Arnold','2.10.':'Levoslav','3.10.':'Stela','4.10.':'František','5.10.':'Viera','6.10.':'Natália','7.10.':'Eliška','8.10.':'Brigita','9.10.':'Dionýz','10.10.':'Slavomíra','11.10.':'Valentína','12.10.':'Maximilián','13.10.':'Koloman','14.10.':'Boris','15.10.':'Terézia','16.10.':'Vladimíra','17.10.':'Hedviga','18.10.':'Lukáš','19.10.':'Kristián','20.10.':'Vendelín','21.10.':'Uršuľa','22.10.':'Sergej','23.10.':'Alojzia','24.10.':'Kvetoslava','25.10.':'Aurél','26.10.':'Demeter','27.10.':'Sabína','28.10.':'Dobromila','29.10.':'Klára','30.10.':'Šimon','31.10.':'Aurélia','1.11.':'Denis','2.11.':'Pamiatka zosnulých','3.11.':'Hubert','4.11.':'Karol','5.11.':'Imrich','6.11.':'Renáta','7.11.':'René','8.11.':'Bohumír','9.11.':'Teodor','10.11.':'Tibor','11.11.':'Martin','12.11.':'Svätopluk','13.11.':'Stanislav','14.11.':'Irma','15.11.':'Leopold','16.11.':'Agnesa','17.11.':'Klaudia','18.11.':'Eugen','19.11.':'Alžbeta','20.11.':'Félix','21.11.':'Elvíra','22.11.':'Cecília','23.11.':'Klement','24.11.':'Emília','25.11.':'Katarína','26.11.':'Kornel','27.11.':'Milan','28.11.':'Henrieta','29.11.':'Vratko','30.11.':'Ondrej','1.12.':'Edmund','2.12.':'Bibiána','3.12.':'Oldrich','4.12.':'Barbora','5.12.':'Oto','6.12.':'Mikuláš','7.12.':'Ambróz','8.12.':'Marína','9.12.':'Izabela','10.12.':'Radúz','11.12.':'Hilda','12.12.':'Otília','13.12.':'Lucia','14.12.':'Branislava','15.12.':'Ivica','16.12.':'Albína','17.12.':'Kornélia','18.12.':'Sláva','19.12.':'Judita','20.12.':'Dagmara','21.12.':'Bohdan','22.12.':'Adela','23.12.':'Nadežda','24.12.':'Adam','25.12.':'1. sviatok vianočný','26.12.':'Štefan','27.12.':'Filoména','28.12.':'Ivana','29.12.':'Milada','30.12.':'Dávid','31.12.':'Silvester'};
