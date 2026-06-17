@@ -7,137 +7,132 @@ import ContactCard from '../components/ContactCard.astro';
 
 <MainLayout>
   <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="relative bg-primary overflow-hidden flex items-center" style="min-height:calc(100vh - 168px);">
-    <svg class="absolute top-0 right-0 w-[800px] h-[800px] opacity-[0.03] text-white" viewBox="0 0 800 800" fill="none" aria-hidden="true">
-      <circle cx="400" cy="400" r="380" stroke="currentColor" stroke-width="2"/>
-      <circle cx="400" cy="400" r="280" stroke="currentColor" stroke-width="1.5"/>
-      <circle cx="400" cy="400" r="180" stroke="currentColor" stroke-width="1"/>
-      <circle cx="400" cy="400" r="80" stroke="currentColor" stroke-width="0.5"/>
-    </svg>
-    <div class="absolute top-[-30%] left-[-10%] w-[500px] h-[500px] rounded-full bg-accent/8 blur-3xl"></div>
-    <div class="absolute bottom-[-20%] right-[-5%] w-[400px] h-[400px] rounded-full bg-amber/8 blur-3xl"></div>
+  <section class="relative bg-navy overflow-hidden">
+    <!-- Subtle grid pattern -->
+    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+    </div>
+    <div class="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-red/[0.06] blur-3xl"></div>
+    <div class="absolute bottom-[-15%] left-[-5%] w-[400px] h-[400px] rounded-full bg-gold/[0.05] blur-3xl"></div>
 
-    <div class="relative w-full max-w-7xl mx-auto px-4 py-20 md:py-12">
-      <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <!-- LEFT -->
-        <div class="space-y-7">
-          <p class="text-white/30 text-xs font-bold uppercase tracking-[0.2em]">AJUVA Š+S s.r.o. · Banská Bystrica</p>
-
-          <h1 class="text-5xl md:text-7xl font-black text-white leading-[0.92] tracking-tight">
-            Odborné<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent via-accent-light to-amber">školenia a revízie</span>
-          </h1>
-
-          <p class="text-white/50 text-lg max-w-md leading-relaxed">
-            Celoslovenská platnosť · 20+ rokov skúseností · Akreditované kurzy
-          </p>
-
-          <div class="flex flex-wrap gap-3">
-            <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !py-4 !px-8 !text-base !rounded-xl">
-              Aktuálne termíny <span class="text-lg">→</span>
-            </a>
-            <a href="/kontakt/ajuva" class="btn btn-ghost-light !py-4 !px-8 !text-base !rounded-xl">
-              Kontakt
-            </a>
+    <div class="relative max-w-7xl mx-auto px-5 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-full bg-red flex items-center justify-center">
+            <span class="text-white font-black text-sm">AJ</span>
           </div>
-
-          <div class="flex gap-10 pt-8 border-t border-white/[0.06]">
-            <div><div class="text-5xl font-black text-white">20+</div><div class="text-white/30 text-sm mt-1">rokov</div></div>
-            <div><div class="text-5xl font-black text-white">3k+</div><div class="text-white/30 text-sm mt-1">absolventov</div></div>
-            <div><div class="text-5xl font-black text-white">10</div><div class="text-white/30 text-sm mt-1">služieb</div></div>
+          <div>
+            <p class="text-white/40 text-xs font-bold uppercase tracking-[0.2em]">AJUVA Š+S s.r.o.</p>
+            <p class="text-white/25 text-[11px]">Banská Bystrica</p>
           </div>
         </div>
 
-        <!-- RIGHT: Glass date card -->
-        <div class="relative hidden md:block">
-          <div class="relative bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08] rounded-3xl p-8 space-y-6">
-            <div class="flex items-center justify-between">
-              <span class="badge badge-accent text-xs px-3 py-1">Najbližší termín</span>
-              <span class="text-white/20 text-xs font-mono">2026</span>
-            </div>
-            <div class="text-7xl font-black text-white tracking-tighter leading-none">21.–22.</div>
-            <div class="text-white/25 text-xl -mt-2">január</div>
-            <hr class="border-white/[0.06]" />
-            <p class="text-white/80 font-bold text-lg">Kurič I. – V. triedy</p>
-            <div class="space-y-2.5 text-white/35 text-sm">
-              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Odborná príprava</div>
-              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber"></span> Certifikát o absolvovaní</div>
-              <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal"></span> Celoslovenská platnosť</div>
-            </div>
-            <a href="/skolenia/kuric-1-5-triedy" class="flex items-center justify-between bg-white/[0.06] hover:bg-white/[0.12] rounded-2xl px-5 py-4 text-white font-bold transition-all">
-              Detail a prihláška <span class="text-lg">→</span>
-            </a>
-          </div>
+        <h1 class="text-5xl md:text-7xl font-black text-white leading-[0.94] tracking-tight mb-8">
+          Odborné školenia<br/>a revízie
+        </h1>
+
+        <p class="text-white/50 text-lg md:text-xl max-w-xl leading-relaxed mb-10">
+          Celoslovenská platnosť · 20+ rokov skúseností · Akreditované odborné kurzy
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !py-4 !px-10 !text-base !rounded-xl shadow-lg shadow-red/25">
+            Termíny školení <span class="text-xl ml-1">→</span>
+          </a>
+          <a href="/kontakt/ajuva" class="btn btn-outline-light !py-4 !px-10 !text-base !rounded-xl">
+            Kontaktujte nás
+          </a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══════════════ TERMÍN — one strong card ═══════════════ -->
-  <section class="relative -mt-16 pb-0 z-10">
-    <div class="max-w-3xl mx-auto px-4">
-      <div class="card p-7 md:p-10 bg-white">
-        <div class="flex flex-col md:flex-row items-start gap-6">
-          <div class="w-20 h-20 rounded-2xl bg-accent-50 flex items-center justify-center flex-shrink-0">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <div class="flex-1">
-            <div class="flex flex-wrap items-center gap-3 mb-2">
-              <span class="badge badge-accent text-[11px]">Školenie</span>
-              <span class="text-ink-300 text-sm">Kurič I. – V. triedy</span>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-black text-ink tracking-tight leading-tight">21. – 22. január 2026</h2>
-            <p class="text-ink-500 text-sm mt-3 max-w-lg leading-relaxed">Dvojdňový certifikovaný kurz. Odborná príprava obslúh vyhradených technických zariadení tlakových a plynových s celoslovenskou platnosťou.</p>
-            <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !rounded-xl mt-5">Prihlásiť sa <span>→</span></a>
-          </div>
+    <!-- Stats bar -->
+    <div class="relative border-t border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-5 py-10 flex flex-wrap gap-12 md:gap-24">
+        <div>
+          <div class="text-5xl md:text-6xl font-black text-white">20+</div>
+          <div class="text-white/30 text-sm mt-2 font-medium">rokov skúseností</div>
+        </div>
+        <div>
+          <div class="text-5xl md:text-6xl font-black text-white">3 000+</div>
+          <div class="text-white/30 text-sm mt-2 font-medium">absolventov</div>
+        </div>
+        <div>
+          <div class="text-5xl md:text-6xl font-black text-white">10</div>
+          <div class="text-white/30 text-sm mt-2 font-medium">odborných služieb</div>
         </div>
       </div>
-      <p class="text-center text-ink-300 text-xs mt-4">
-        <a href="/skolenia/kuric-1-5-triedy" class="font-semibold text-accent hover:underline">Ďalšie termíny</a> — revízni technici, opravy VTZ a iné
-      </p>
     </div>
   </section>
 
   <!-- ═══════════════ SLUŽBY ═══════════════ -->
-  <section class="section mt-12">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-4">
-        <div>
-          <p class="section-label">Čo ponúkame</p>
-          <h2 class="text-4xl md:text-6xl font-black text-ink tracking-tight leading-[0.95]">Komplexné<br/>služby</h2>
-        </div>
-        <div class="flex gap-3">
-          <div class="w-12 h-12 rounded-2xl bg-accent-50 flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div class="w-12 h-12 rounded-2xl bg-amber-light flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <div class="w-12 h-12 rounded-2xl bg-teal-light flex items-center justify-center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-        </div>
+  <section class="section bg-surface">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center mb-16">
+        <p class="section-label">Čo ponúkame</p>
+        <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight">Naše služby</h2>
+        <p class="text-ink-500 text-lg mt-4 max-w-2xl mx-auto">Komplexné riešenia v oblasti bezpečnosti práce, odborných prehliadok a školení s celoslovenskou pôsobnosťou.</p>
       </div>
       <ServiceList />
     </div>
   </section>
 
+  <!-- ═══════════════ TERMÍN ═══════════════ -->
+  <section class="section">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="card p-8 md:p-12 bg-white">
+        <div class="flex flex-col md:flex-row items-start gap-8">
+          <div class="w-20 h-20 rounded-2xl bg-red-light flex items-center justify-center flex-shrink-0">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-red)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="badge badge-red text-[11px] px-3 py-1">Najbližší termín</span>
+              <span class="text-ink-300 text-sm font-medium">Kurič I. – V. triedy</span>
+            </div>
+            <h3 class="text-3xl md:text-4xl font-black text-ink tracking-tight">21. – 22. január 2026</h3>
+            <p class="text-ink-500 mt-4 max-w-xl leading-relaxed">Dvojdňový certifikovaný kurz odbornej prípravy obslúh vyhradených technických zariadení tlakových a plynových. Celoslovenská platnosť, akreditovaný program.</p>
+            <div class="flex flex-wrap gap-4 mt-6">
+              <a href="/skolenia/kuric-1-5-triedy" class="btn btn-primary !rounded-xl">Detail kurzu →</a>
+              <a href="/skolenia/kuric-1-5-triedy" class="btn !bg-white !border !border-line !text-ink hover:!border-line-strong !rounded-xl">Všetky termíny</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════ GALÉRIA ═══════════════ -->
   <section class="section bg-surface">
-    <div class="max-w-7xl mx-auto px-4">
-      <p class="section-label">Galéria</p>
-      <h2 class="text-4xl md:text-6xl font-black text-ink tracking-tight leading-[0.95] mb-8">Z našich školení</h2>
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <p class="section-label">Galéria</p>
+          <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight">Z našich školení</h2>
+        </div>
+        <a href="/o-nas/galeria" class="text-red font-extrabold text-sm hover:underline">Celá galéria →</a>
+      </div>
       <Gallery />
     </div>
   </section>
 
-  <!-- ═══════════════ KONTAKT + MAPA ═══════════════ -->
+  <!-- ═══════════════ KONTAKT ═══════════════ -->
   <section class="section">
-    <div class="max-w-7xl mx-auto px-4">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="section-label">Kontakt</p>
+        <h2 class="text-4xl md:text-5xl font-black text-ink tracking-tight">Sme tu pre vás</h2>
+      </div>
       <div class="grid md:grid-cols-2 gap-8">
         <ContactCard />
-        <div class="card-static overflow-hidden flex flex-col min-h-[500px]">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2634.305570123456!2d19.1525!3d48.7357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471516c5a1b0e5f7%3A0x4a2b1c3d4e5f6789!2sZvolensk%C3%A1%20cesta%2020%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1700000000000" width="100%" style="border:0;min-height:350px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — AJUVA, Zvolenská cesta 20, Banská Bystrica" class="flex-1"></iframe>
+        <div class="card-static overflow-hidden flex flex-col">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2634.305570123456!2d19.1525!3d48.7357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471516c5a1b0e5f7%3A0x4a2b1c3d4e5f6789!2sZvolensk%C3%A1%20cesta%2020%2C%20974%2001%20Bansk%C3%A1%20Bystrica!5e0!3m2!1ssk!2ssk!4v1700000000000" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — AJUVA, Zvolenská cesta 20, Banská Bystrica" class="flex-1 min-h-[320px]"></iframe>
           <div class="px-6 py-4 flex items-center justify-between bg-surface border-t border-line">
             <div>
               <p class="font-extrabold text-ink text-sm">Zvolenská cesta 20, Banská Bystrica</p>
-              <p class="text-ink-300 text-xs">Bezplatné parkovanie pri budove</p>
+              <p class="text-ink-300 text-xs mt-0.5">Bezplatné parkovanie pri budove</p>
             </div>
-            <a href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica" target="_blank" rel="noopener" class="text-accent font-extrabold text-sm hover:underline">Navigovať →</a>
+            <a href="https://maps.google.com/?q=Zvolenská+cesta+20+Banská+Bystrica" target="_blank" rel="noopener" class="text-red font-extrabold text-sm hover:underline">Navigovať →</a>
           </div>
         </div>
       </div>
@@ -145,40 +140,33 @@ import ContactCard from '../components/ContactCard.astro';
   </section>
 
   <!-- ═══════════════ CTA ═══════════════ -->
-  <section class="relative bg-primary overflow-hidden py-20 md:py-28">
-    <div class="absolute right-[5%] top-1/2 -translate-y-1/2 opacity-[0.04] text-white" aria-hidden="true">
-      <svg width="300" height="400" viewBox="0 0 300 400" fill="currentColor"><path d="M150 400c60-80 100-160 100-230 0-50-15-90-30-110-15 20-30 60-30 110 0 70 40 150-40 230zm0 0c-60-80-100-160-100-230 0-50 15-90 30-110 15 20 30 60 30 110 0 70-40 150 40 230z"/></svg>
+  <section class="relative bg-navy overflow-hidden py-20 md:py-28">
+    <div class="absolute inset-0 opacity-[0.03]" aria-hidden="true">
+      <div class="absolute inset-0" style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
     </div>
-    <div class="relative max-w-2xl mx-auto text-center px-4">
-      <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-[0.95]">Máte záujem o spoluprácu?</h2>
-      <p class="text-white/30 text-lg mt-5">Kontaktujte nás — nezáväzná konzultácia, flexibilné termíny, férové ceny.</p>
-      <div class="mt-8">
-        <a href="/kontakt/ajuva" class="btn !bg-white !text-primary !py-4 !px-10 !text-base !rounded-xl font-extrabold hover:!bg-white/90 hover:scale-105 transition-transform">
-          Kontaktujte nás <span class="text-xl">→</span>
+    <div class="relative max-w-2xl mx-auto text-center px-5">
+      <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight leading-[0.95]">Pripravení pomôcť</h2>
+      <p class="text-white/40 text-lg mt-5 max-w-lg mx-auto">Nezáväzná konzultácia, férové ceny, flexibilné termíny. Ozvite sa.</p>
+      <div class="mt-10">
+        <a href="/kontakt/ajuva" class="btn !bg-white !text-navy !py-4 !px-12 !text-base !rounded-xl font-extrabold hover:!bg-white/90 hover:scale-105 transition-transform shadow-lg">
+          Kontaktujte nás <span class="text-xl ml-1">→</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- JSON-LD Structured Data -->
+  <!-- JSON-LD -->
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "AJUVA Š+S s.r.o.",
     "description": "Odborné školenia, prehliadky a revízie vyhradených technických zariadení. BOZP, PO, pracovná zdravotná služba.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Zvolenská cesta 20",
-      "addressLocality": "Banská Bystrica",
-      "postalCode": "974 01",
-      "addressCountry": "SK"
-    },
+    "address": { "@type": "PostalAddress", "streetAddress": "Zvolenská cesta 20", "addressLocality": "Banská Bystrica", "postalCode": "974 01", "addressCountry": "SK" },
     "telephone": "+421484162775",
     "email": "ajuva@ajuva.sk",
     "taxID": "SK2021996251",
-    "url": "https://ajuva-redesign-demo.netlify.app",
-    "sameAs": ["https://www.ajuva.sk"]
+    "url": "https://ajuva-redesign-demo.netlify.app"
   }
   </script>
 </MainLayout>

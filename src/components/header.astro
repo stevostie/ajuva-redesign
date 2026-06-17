@@ -1,20 +1,112 @@
 ---
 ---
 
-<header class="bg-primary">
-  <div class="max-w-7xl mx-auto px-4 h-[120px] flex items-center justify-between">
-    <a href="/" class="flex items-center gap-5 flex-shrink-0 group" title="AJUVA">
-      <img src="/images/ajuva.webp" alt="Logo AJUVA" class="h-28 w-auto group-hover:scale-105 transition-transform duration-300 drop-shadow-xl" />
+<header class="bg-navy border-b border-white/[0.06]">
+  <div class="max-w-7xl mx-auto px-5 h-[100px] flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-4 flex-shrink-0 group" title="AJUVA">
+      <div class="w-14 h-14 rounded-full bg-red flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+        <span class="text-white font-black text-xl leading-none">AJ</span>
+      </div>
       <div>
-        <div class="text-white font-black text-2xl tracking-tight">AJUVA</div>
-        <div class="text-white/35 text-sm font-medium">Š+S s.r.o. · Banská Bystrica</div>
+        <div class="text-white font-extrabold text-2xl tracking-tight leading-tight">AJUVA</div>
+        <div class="text-white/40 text-[11px] font-medium tracking-wider uppercase">Školenie · Servis</div>
       </div>
     </a>
-    <div class="hidden lg:flex items-center gap-5 text-white/65 text-sm">
-      <span class="font-bold text-white">048/416 27 75</span>
-      <span class="text-white/20">·</span>
-      <span>ajuva@ajuva.sk</span>
-      <a href="/kontakt/ajuva" class="btn btn-primary text-sm !py-2.5 !px-5">Kontakt</a>
+
+    <!-- Right: contact + CTA -->
+    <div class="hidden lg:flex items-center gap-6">
+      <div class="text-white/60 text-sm">
+        <span class="text-white font-semibold">048/416 27 75</span>
+      </div>
+      <div class="text-white/40 text-sm">ajuva@ajuva.sk</div>
+      <a href="/kontakt/ajuva" class="btn btn-primary !py-2.5 !px-6 !text-sm !rounded-lg">Kontakt</a>
     </div>
   </div>
 </header>
+
+<!-- Navigation bar -->
+<nav class="nav-desktop border-b border-white/[0.04]">
+  <div class="max-w-7xl mx-auto px-5 flex items-center h-[52px] gap-1">
+    <a href="/" class="nav-item nav-active px-4 py-2 rounded-md">Domov</a>
+    <div class="relative group">
+      <a href="/skolenia/kuric-1-5-triedy" class="nav-item px-4 py-2 rounded-md inline-flex items-center gap-1.5">Školenia <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="opacity-50 group-hover:opacity-100"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+        <div class="nav-dropdown">
+          <a href="/skolenia/kuric-1-5-triedy" class="nav-dropdown-item">Kurič I. – V. triedy</a>
+          <a href="/skolenia/kuric-do-100-kw" class="nav-dropdown-item">Kurič do 100 kW</a>
+          <a href="/skolenia/obsluhy-tlak" class="nav-dropdown-item">Obsluhy tlakových zariadení</a>
+          <a href="/skolenia/obsluhy-plyn" class="nav-dropdown-item">Obsluhy plynových zariadení</a>
+          <a href="/skolenia/opravy-vtz-tlak" class="nav-dropdown-item">Opravy VTZ tlak</a>
+          <a href="/skolenia/opravy-vtz-plyn" class="nav-dropdown-item">Opravy VTZ plyn</a>
+          <a href="/skolenia/viazac-bremien" class="nav-dropdown-item">Viazač bremien</a>
+          <a href="/skolenia/zdvihacie-zariadenia" class="nav-dropdown-item">Zdvíhacie zariadenia</a>
+          <a href="/skolenia/rt-vtz-tlak" class="nav-dropdown-item">RT VTZ tlak</a>
+          <a href="/skolenia/rt-vtz-tlak-bane" class="nav-dropdown-item">RT VTZ tlak bane</a>
+          <a href="/skolenia/technik-bozp" class="nav-dropdown-item">Technik BOZP</a>
+          <a href="/skolenia/skolenie-bozp-pp" class="nav-dropdown-item">Školenie BOZP/PP</a>
+          <a href="/skolenia/seminare" class="nav-dropdown-item">Semináre</a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group">
+      <a href="/prehliadky/vtz-tlakove" class="nav-item px-4 py-2 rounded-md inline-flex items-center gap-1.5">Prehliadky <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="opacity-50 group-hover:opacity-100"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+        <div class="nav-dropdown">
+          <a href="/prehliadky/vtz-tlakove" class="nav-dropdown-item">VTZ tlakové</a>
+          <a href="/prehliadky/vtz-plynove" class="nav-dropdown-item">VTZ plynové</a>
+          <a href="/prehliadky/kotolne-ntlk" class="nav-dropdown-item">Kotolne NTLK</a>
+          <a href="/prehliadky/vykurovacie-systemy" class="nav-dropdown-item">Vykurovacie systémy</a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group">
+      <a href="/bozp-po/ponuka-bozp" class="nav-item px-4 py-2 rounded-md inline-flex items-center gap-1.5">BOZP/PO <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="opacity-50 group-hover:opacity-100"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+        <div class="nav-dropdown">
+          <a href="/bozp-po/ponuka-bozp" class="nav-dropdown-item">Ponuka BOZP</a>
+          <a href="/bozp-po/ponuka-po" class="nav-dropdown-item">Ponuka PO</a>
+        </div>
+      </div>
+    </div>
+    <div class="relative group">
+      <a href="/o-nas/profil" class="nav-item px-4 py-2 rounded-md inline-flex items-center gap-1.5">O nás <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="opacity-50 group-hover:opacity-100"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+        <div class="nav-dropdown">
+          <a href="/o-nas/profil" class="nav-dropdown-item">Profil</a>
+          <a href="/o-nas/opravnenia" class="nav-dropdown-item">Oprávnenia</a>
+          <a href="/o-nas/referencie" class="nav-dropdown-item">Referencie</a>
+          <a href="/o-nas/galeria" class="nav-dropdown-item">Galéria</a>
+        </div>
+      </div>
+    </div>
+    <a href="/kontakt/ajuva" class="nav-item px-4 py-2 rounded-md">Kontakt</a>
+    <div class="relative group">
+      <a href="#" class="nav-item px-4 py-2 rounded-md inline-flex items-center gap-1.5">Viac <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" class="opacity-50 group-hover:opacity-100"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="absolute right-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+        <div class="nav-dropdown" style="min-width:280px">
+          <div class="nav-dropdown-section">Predpisy</div>
+          <a href="/predpisy/bezpecnost-prace" class="nav-dropdown-item">Bezpečnosť práce</a>
+          <a href="/predpisy/poziarna-ochrana" class="nav-dropdown-item">Požiarna ochrana</a>
+          <a href="/predpisy/vtz-tlak-plyn" class="nav-dropdown-item">VTZ tlak/plyn</a>
+          <a href="/predpisy/vykurovacie-systemy" class="nav-dropdown-item">Vykurovacie systémy</a>
+          <a href="/predpisy/zdravotna-sluzba" class="nav-dropdown-item">Zdravotná služba</a>
+          <a href="/predpisy/stn-stn-en" class="nav-dropdown-item">STN/STN EN</a>
+          <a href="/predpisy/uzitocne-stranky" class="nav-dropdown-item">Užitočné stránky</a>
+          <a href="/predpisy/clanky-stanoviska" class="nav-dropdown-item">Články/stanoviská</a>
+          <div class="nav-dropdown-section mt-1">Tlačivá</div>
+          <a href="/tlaciva/tlaciva" class="nav-dropdown-item">Tlačivá</a>
+          <a href="/tlaciva/prirucky-brozury" class="nav-dropdown-item">Príručky/brožúry</a>
+          <a href="/tlaciva/faq" class="nav-dropdown-item">FAQ</a>
+          <a href="/tlaciva/partneri-tlaciva" class="nav-dropdown-item">Partneri</a>
+          <div class="nav-dropdown-section mt-1">Ostatné</div>
+          <a href="/zabava/vtipy" class="nav-dropdown-item">Vtipy</a>
+          <a href="/zabava/mudre-vyroky" class="nav-dropdown-item">Múdre výroky</a>
+          <a href="/zabava/murphyho-zakony" class="nav-dropdown-item">Murphyho zákony</a>
+          <a href="/zabava/video-vyuka" class="nav-dropdown-item">Video výuka</a>
+          <a href="/ponukame" class="nav-dropdown-item">Ponúkame</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

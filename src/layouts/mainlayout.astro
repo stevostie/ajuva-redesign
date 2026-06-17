@@ -1,6 +1,5 @@
 ---
 import Header from '../components/Header.astro';
-import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
@@ -22,14 +21,13 @@ const { title } = Astro.props;
     <title>{title ? `${title} — AJUVA B.Bystrica` : 'DOMOV — AJUVA B.Bystrica'}</title>
   </head>
   <body class="min-h-screen">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-navy focus:text-white focus:p-2 focus:z-50 focus:rounded">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-navy-lighter focus:text-white focus:p-2 focus:z-50 focus:rounded">
       Preskočiť na obsah
     </a>
 
     <div id="app-content" class="min-h-screen flex flex-col">
       <div class="sticky top-0 z-50">
         <Header />
-        <Navigation />
       </div>
 
       <main id="main-content" class="flex-1">
