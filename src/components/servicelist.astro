@@ -1,85 +1,53 @@
 ---
-import { services } from '../data/content';
 ---
 
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Odborné prehliadky VTZ</h4>
-      <p class="text-muted text-xs mt-1">Kontroly tlakových a plynových zariadení, elektrických spotrebičov</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <!-- 1 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
     </div>
+    <h4 class="font-bold text-ink mb-1.5">Odborné prehliadky VTZ</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Vykonávanie odborných prehliadok vyhradených technických zariadení tlakových a plynových, kontroly elektrických spotrebičov.</p>
   </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Školenia obslúh</h4>
-      <p class="text-muted text-xs mt-1">Tlakové, plynové, zdvíhacie zariadenia, revízni technici</p>
+  <!-- 2 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-4 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
     </div>
+    <h4 class="font-bold text-ink mb-1.5">Školenia obslúh</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Obsluhy VTZ tlakových, plynových a zdvíhacích zariadení, revízni technici, bezpečnostní technici.</p>
   </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Spracovanie dokumentácie</h4>
-      <p class="text-muted text-xs mt-1">Prevádzkové predpisy, duplikáty pre VTZ</p>
+  <!-- 3 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
     </div>
+    <h4 class="font-bold text-ink mb-1.5">Spracovanie dokumentácie</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Miestne prevádzkové predpisy, chýbajúca dokumentácia, duplikáty pre VTZ tlakové a plynové.</p>
   </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Kontrola kotlov</h4>
-      <p class="text-muted text-xs mt-1">Pravidelná a rozšírená kontrola vykurovacích systémov</p>
+  <!-- 4 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-4 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1010 10c0-1.1-.9-2-2-2h-3.5c-.8 0-1.5-.7-1.5-1.5v-5c0-1.1-.9-2-2-2h-1z"/></svg>
     </div>
+    <h4 class="font-bold text-ink mb-1.5">Kontrola kotlov a vykurovania</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Pravidelná a rozšírená kontrola kotlov a vykurovacích systémov podľa platnej legislatívy.</p>
   </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">BOZP a PO</h4>
-      <p class="text-muted text-xs mt-1">Výchova a vzdelávanie v oblasti bezpečnosti práce</p>
+  <!-- 5 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
     </div>
+    <h4 class="font-bold text-ink mb-1.5">BOZP a ochrana zdravia</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Výkon technika BOZP, technika požiarnej ochrany, výchova a vzdelávanie zamestnancov.</p>
   </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Technik BOZP</h4>
-      <p class="text-muted text-xs mt-1">Výkon technika bezpečnosti a ochrany zdravia pri práci</p>
+  <!-- 6 -->
+  <div class="card p-5 group">
+    <div class="w-10 h-10 rounded-xl bg-brand/10 flex items-center justify-center mb-4 text-brand group-hover:bg-brand group-hover:text-white transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
     </div>
-  </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Technik PO</h4>
-      <p class="text-muted text-xs mt-1">Výkon technika požiarnej ochrany</p>
-    </div>
-  </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Pracovná zdravotná služba</h4>
-      <p class="text-muted text-xs mt-1">Pre kategórie 1 a 2</p>
-    </div>
-  </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Dokumentácia BOZP</h4>
-      <p class="text-muted text-xs mt-1">Spracovanie dokumentácie BOZP a PO</p>
-    </div>
-  </div>
-
-  <div class="card p-5 flex gap-3 items-start">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5" aria-hidden="true"><path d="M20.42 4.58a5.4 5.4 0 00-7.65 0l-.77.78-.77-.78a5.4 5.4 0 00-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><circle cx="12" cy="12" r="0" fill="currentColor"/></svg>
-    <div>
-      <h4 class="font-semibold text-ink text-sm">Sprostredkovateľské služby</h4>
-      <p class="text-muted text-xs mt-1">Semináre, kurzy, servis a opravy VTZ</p>
-    </div>
+    <h4 class="font-bold text-ink mb-1.5">Pracovná zdravotná služba</h4>
+    <p class="text-ink-500 text-sm leading-relaxed">Výkon PZS pre kategórie 1 a 2, spracovanie dokumentácie, sprostredkovateľské služby.</p>
   </div>
 </div>

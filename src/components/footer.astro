@@ -2,46 +2,49 @@
 import { companyInfo } from '../data/content';
 ---
 
-<footer class="bg-surface border-t border-line mt-0">
-  <div class="max-w-6xl mx-auto px-4 py-12">
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <!-- Company info -->
+<footer class="footer pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/[0.06]">
+      <!-- Company -->
       <div>
-        <h4 class="font-semibold text-ink text-sm uppercase tracking-wider mb-3">AJUVA Š+S s.r.o.</h4>
-        <p class="text-muted text-sm">Zvolenská cesta 20<br />974 01 Banská Bystrica</p>
-        <p class="text-muted text-sm mt-2">{companyInfo.tel}</p>
-        <a href={`mailto:${companyInfo.email}`} class="text-brand text-sm hover:underline">{companyInfo.email}</a>
-        <p class="text-muted text-xs mt-3">IČO: {companyInfo.ico}<br />DIČ: {companyInfo.dic}<br />IČ DPH: {companyInfo.icDph}</p>
+        <h4 class="mb-4">AJUVA Š+S s.r.o.</h4>
+        <p class="text-ink-300 text-sm leading-relaxed">Odborné školenia, prehliadky a revízie vyhradených technických zariadení. BOZP, PO, pracovná zdravotná služba.</p>
+        <p class="text-ink-300 text-xs mt-3">© {new Date().getFullYear()} Všetky práva vyhradené.</p>
       </div>
-
-      <!-- Rýchle odkazy -->
+      <!-- Quick links 1 -->
       <div>
-        <h4 class="font-semibold text-ink text-sm uppercase tracking-wider mb-3">Rýchle odkazy</h4>
-        <ul class="space-y-2 text-sm">
-          <li><a href="/" class="text-muted hover:text-brand transition">Domov</a></li>
-          <li><a href="/skolenia/kuric-1-5-triedy" class="text-muted hover:text-brand transition">Školenia</a></li>
-          <li><a href="/prehliadky/vtz-tlakove" class="text-muted hover:text-brand transition">Prehliadky</a></li>
-          <li><a href="/bozp-po/ponuka-bozp" class="text-muted hover:text-brand transition">BOZP, PO</a></li>
-          <li><a href="/kontakt/ajuva" class="text-muted hover:text-brand transition">Kontakt</a></li>
-          <li><a href="/o-nas/profil" class="text-muted hover:text-brand transition">O nás</a></li>
-          <li><a href="/predpisy/bezpecnost-prace" class="text-muted hover:text-brand transition">Predpisy</a></li>
-          <li><a href="/tlaciva/tlaciva" class="text-muted hover:text-brand transition">Tlačivá</a></li>
-          <li><a href="/ponukame" class="text-muted hover:text-brand transition">Ponúkame</a></li>
-        </ul>
+        <h4 class="mb-4">Služby</h4>
+        <div class="space-y-2.5">
+          <a href="/skolenia/kuric-1-5-triedy" class="block">Školenia</a>
+          <a href="/prehliadky/vtz-tlakove" class="block">Prehliadky</a>
+          <a href="/bozp-po/ponuka-bozp" class="block">BOZP, PO</a>
+          <a href="/o-nas/profil" class="block">O nás</a>
+          <a href="/kontakt/ajuva" class="block">Kontakt</a>
+        </div>
       </div>
-
-      <!-- Kontakt & Hours -->
+      <!-- Quick links 2 -->
       <div>
-        <h4 class="font-semibold text-ink text-sm uppercase tracking-wider mb-3">Kontakt</h4>
-        <p class="text-muted text-sm">Mgr. Albína ADAMČÍKOVÁ<br /><a href="tel:0915808918" class="text-brand hover:underline">0915 808 918</a><br /><a href="mailto:adamcikova@ajuva.sk" class="text-brand hover:underline">adamcikova@ajuva.sk</a></p>
-        <p class="text-muted text-sm mt-3">Ing. Ján ÚRADNÍK<br /><a href="tel:0915834450" class="text-brand hover:underline">0915 834 450</a><br /><a href="mailto:uradnik@ajuva.sk" class="text-brand hover:underline">uradnik@ajuva.sk</a></p>
+        <h4 class="mb-4">Informácie</h4>
+        <div class="space-y-2.5">
+          <a href="/predpisy/bezpecnost-prace" class="block">Predpisy</a>
+          <a href="/tlaciva/tlaciva" class="block">Tlačivá</a>
+          <a href="/zabava/vtipy" class="block">Zábava</a>
+          <a href="/ponukame" class="block">Ponúkame</a>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 class="mb-4">Kontakt</h4>
+        <div class="space-y-3 text-sm text-ink-300">
+          <p>Zvolenská cesta 20<br/>974 01 Banská Bystrica</p>
+          <p class="font-semibold text-white">{companyInfo.tel}</p>
+          <p>{companyInfo.email}</p>
+        </div>
       </div>
     </div>
-
-    <!-- Bottom bar -->
-    <div class="border-t border-line mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
-      <p>&copy; {new Date().getFullYear()} AJUVA Š+S s.r.o. — Všetky práva vyhradené.</p>
+    <div class="pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-ink-500">
       <p>Aktualizované: {companyInfo.lastUpdated}</p>
+      <p>IČO: {companyInfo.ico} · DIČ: {companyInfo.dic} · IČ DPH: {companyInfo.icDph}</p>
     </div>
   </div>
 </footer>

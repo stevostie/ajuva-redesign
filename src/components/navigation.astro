@@ -1,71 +1,43 @@
 ---
 import { mainMenu } from '../data/menu';
-
 const currentPath = Astro.url?.pathname || '/';
 ---
 
-<!-- Mobile toggle -->
-<button
-  id="mobile-menu-toggle"
-  class="nav-mobile-toggle w-full bg-brand text-white px-4 py-3 text-left font-semibold flex items-center justify-between"
-  aria-label="Menu"
->
-  <span class="flex items-center gap-2">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    MENU
-  </span>
-  <svg id="mobile-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+<!-- Mobile -->
+<button id="mobile-menu-toggle" class="nav-mobile-toggle w-full bg-brand text-white px-4 py-3 text-sm font-semibold items-center justify-between" aria-label="Menu">
+  <span>☰ Menu</span>
+  <span id="mobile-arrow" class="text-[10px] transition-transform duration-300">▾</span>
 </button>
 
-<!-- Desktop Navigation -->
-<nav class="nav-desktop text-white relative z-40">
-  <div class="max-w-6xl mx-auto">
-    <ul class="flex flex-wrap justify-center">
+<nav class="nav-desktop border-b border-white/[0.06] shadow-sm">
+  <div class="max-w-7xl mx-auto px-4">
+    <ul class="flex items-center">
       {mainMenu.map((item) => (
         <li class="relative group">
           {item.href ? (
-            <a
-              href={item.href}
-              class={`nav-item block px-4 py-3 text-[13px] font-semibold whitespace-nowrap tracking-wide ${currentPath === item.href ? 'nav-active' : ''}`}
-            >
+            <a href={item.href} class={`nav-item block px-4 py-3.5 whitespace-nowrap ${currentPath === item.href ? 'nav-active' : ''}`}>
               {item.label}
             </a>
           ) : (
-            <span
-              class={`nav-item block px-4 py-3 text-[13px] font-semibold whitespace-nowrap tracking-wide cursor-pointer ${item.children?.some(c => c.href && currentPath === c.href) ? 'nav-active' : ''}`}
-            >
+            <button class={`nav-item block px-4 py-3.5 whitespace-nowrap inline-flex items-center gap-1 ${item.children?.some(c => c.href && currentPath === c.href) ? 'nav-active' : ''}`}>
               {item.label}
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="inline-block ml-1 opacity-50" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-            </span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-hover:opacity-100 transition-opacity" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
           )}
           {item.children && item.children.length > 0 && (
-            <ul class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full pt-0 min-w-[220px]
-                       opacity-0 invisible group-hover:opacity-100 group-hover:visible
-                       transition-all duration-200 z-50
-                       translate-y-1 group-hover:translate-y-0">
-              <div class="py-2">
-                {item.children.map((child, idx) => (
+            <div class="absolute left-0 top-full pt-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
+              <div class="nav-dropdown">
+                {item.children.map((child) => (
                   child.isSectionHeader ? (
-                    <li class="px-5 pt-3 pb-1 text-[10px] font-semibold text-muted uppercase tracking-wider">
-                      {child.label}
-                    </li>
+                    <div class="nav-dropdown-section">{child.label}</div>
                   ) : (
-                    <li class={idx === 0 || item.children[idx - 1]?.isSectionHeader ? 'mt-0' : ''}>
-                      <a
-                        href={child.href}
-                        class={`block px-5 py-2 text-[13px] font-semibold whitespace-nowrap transition-colors duration-150
-                          ${currentPath === child.href
-                            ? 'bg-brand/5 text-brand'
-                            : 'text-brand hover:bg-surface'
-                          }`}
-                      >
-                        {child.label}
-                      </a>
-                    </li>
+                    <a href={child.href} class={`nav-dropdown-item ${currentPath === child.href ? 'text-accent font-semibold bg-accent-50' : ''}`}>
+                      {child.label}
+                    </a>
                   )
                 ))}
               </div>
-            </ul>
+            </div>
           )}
         </li>
       ))}
@@ -75,32 +47,25 @@ const currentPath = Astro.url?.pathname || '/';
 
 <!-- Mobile menu -->
 <div id="mobile-menu" class="nav-mobile-menu bg-brand text-white hidden">
-  <ul class="divide-y divide-white/10">
+  <ul class="divide-y divide-white/[0.06]">
     {mainMenu.map((item) => (
       <li>
         {item.href ? (
-          <a href={item.href} class="block px-4 py-3 text-sm font-semibold hover:bg-white/10 transition-colors">
-            {item.label}
-          </a>
+          <a href={item.href} class="block px-5 py-3 text-sm font-semibold hover:bg-white/5 transition-colors">{item.label}</a>
         ) : (
-          <details class="group/mob">
-            <summary class="block px-4 py-3 text-sm font-semibold cursor-pointer hover:bg-white/10 list-none flex justify-between items-center">
-              {item.label}
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="opacity-50 group-open/mob:rotate-180 transition-transform" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          <details>
+            <summary class="block px-5 py-3 text-sm font-semibold hover:bg-white/5 transition-colors cursor-pointer list-none flex justify-between items-center">
+              {item.label} <span class="text-[10px]">▾</span>
             </summary>
-            <ul class="bg-[#060E3A]/80">
+            <div class="bg-black/20 py-1">
               {item.children?.map((child) => (
                 child.isSectionHeader ? (
-                  <li class="px-8 pt-3 pb-1 text-[11px] font-semibold text-white/40 uppercase tracking-wider">{child.label}</li>
+                  <div class="px-8 py-2 text-[11px] font-bold text-white/30 uppercase">{child.label}</div>
                 ) : (
-                  <li>
-                    <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-white/10 transition-colors">
-                      {child.label}
-                    </a>
-                  </li>
+                  <a href={child.href} class="block px-8 py-2.5 text-sm hover:bg-white/5 transition-colors">{child.label}</a>
                 )
               ))}
-            </ul>
+            </div>
           </details>
         )}
       </li>
@@ -109,14 +74,13 @@ const currentPath = Astro.url?.pathname || '/';
 </div>
 
 <script>
-  const toggle = document.getElementById('mobile-menu-toggle');
-  const menu = document.getElementById('mobile-menu');
-  const arrow = document.getElementById('mobile-arrow');
-  if (toggle && menu && arrow) {
-    toggle.addEventListener('click', () => {
-      const isHidden = menu.classList.contains('hidden');
-      menu.classList.toggle('hidden', !isHidden);
-      arrow.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+  const t = document.getElementById('mobile-menu-toggle');
+  const m = document.getElementById('mobile-menu');
+  const a = document.getElementById('mobile-arrow');
+  if (t && m && a) {
+    t.addEventListener('click', () => {
+      m.classList.toggle('hidden');
+      a.style.transform = m.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
     });
   }
 </script>
