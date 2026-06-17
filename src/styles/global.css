@@ -80,8 +80,7 @@ body { font-family: var(--font-sans); background: white; color: var(--color-ink)
 .section-label { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-accent); margin-bottom: 1rem; }
 
 /* ── Gallery ── */
-.gallery-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s; }
-.gallery-slide.active { opacity: 1; }
+/* Gallery uses display:block/none in JS — no opacity trick */
 
 /* ── Mobile ── */
 @media (max-width: 768px) { .nav-desktop { display: none; } .nav-mobile-toggle { display: flex; } }
